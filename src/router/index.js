@@ -5,6 +5,7 @@ import RecordView from "@/views/RecordView";
 import NoveltyView from "@/views/NoveltyView";
 import ShortcutView from "@/views/ShortcutView";
 import GalleryView from "@/views/GalleryView";
+import ProfileCardView from "@/views/ProfileCardView";
 
 
 const routes = [
@@ -38,7 +39,12 @@ const routes = [
       {
         path:'gallery',
         name:'gallery',
-        component:GalleryView,
+        component: GalleryView,
+      },
+      {
+        path: 'profileCard',
+        name: 'profileCard',
+        component: ProfileCardView,
       }
     ]
   },

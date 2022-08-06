@@ -49,9 +49,9 @@ export default {
 				'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-03-min.jpg',
 				'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-04-min.jpg',
 				'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-05-min.jpg',
-				//'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-06-min.jpg',
-				//'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-07-min.jpg',
-				//'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-08-min.jpg'
+				'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-06-min.jpg',
+				'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-07-min.jpg',
+				'https://s3-us-west-2.amazonaws.com/s.cdpn.io/20625/lordea-home-08-min.jpg'
 			]
 		}
 	},
@@ -89,6 +89,7 @@ $brand: #5c4084;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow: auto;
 	background-color: $brand;
 	text-align: center;
 	width: 100%;
@@ -100,7 +101,7 @@ h2 {
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
 	text-align: center;
-	margin: 0 0 5px 0;
+	margin: 10px 0px;
 	font-weight: 700;
 	font-size: 2rem;
 	color: #fff;
@@ -108,13 +109,13 @@ h2 {
 	
 
 .gallery {
-	width: 64%;
-	//max-width: 700px;
+	width: 80%;
 	display: flex;
 	flex-direction: column;
 	background-color: #ffffff;
 	padding: 4px 4px 6px;
 	border-radius: 8px;
+	margin-bottom: 30px;
 	
 	.active-photo {
 		width: 100%;
