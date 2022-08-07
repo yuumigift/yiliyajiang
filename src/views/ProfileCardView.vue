@@ -2,9 +2,9 @@
 	<div class="card-box">
 		<div class="card" :class="active(2) || active(3)" >
 			<div class="card-header">
-				<img class="card-avatar" src="https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="avatar"/>
-				<h1 class="card-fullname">京茶吉鹿</h1>
-				<h2 class="card-jobtitle">网站开发者</h2>
+				<img class="card-avatar" :src="imageUrl" alt="avatar"/>
+				<h1 class="card-fullname">周杰伦 Jay Chou</h1>
+				<h2 class="card-jobtitle">华语流行乐男歌手</h2>
 			</div>
 			
 			<div class="card-main">
@@ -12,10 +12,8 @@
 				<!--第一页-->
 				<div class="card-section" :class="active(1)">
 					<div class="card-content">
-						<div class="card-subtitle">ABOUT</div>
-						<p class="card-desc">Whatever tattooed stumptown art party sriracha gentrify hashtag
-							intelligentsia readymade schlitz brooklyn disrupt.
-						</p>
+						<div class="card-subtitle">关于</div>
+						<p class="card-desc">中国台湾华语流行歌手、著名音乐人、音乐创作家、作曲家、作词人、制作人、杰威尔音乐公司老板之一、导演。</p>
 					</div>
 					<!--四个图标-->
 					<div class="card-social">
@@ -53,7 +51,7 @@
 				<!--第二页-->
 				<div class="card-section" :class="active(2)">
 					<div class="card-content">
-						<div class="card-subtitle">WORK EXPERIENCE</div>
+						<div class="card-subtitle">专辑发布</div>
 						
 						<div class="card-timeline">
 							<div class="card-item" :data-year="item.time"  v-for="item in timeline" :key="item.id">
@@ -67,21 +65,20 @@
 				<!--第三页-->
 				<div class="card-section" :class="active(3)">
 					<div class="card-content">
-						<div class="card-subtitle">CONTACT</div>
+						<div class="card-subtitle">联系</div>
 						<div class="card-contact-wrapper">
 							<div class="card-contact" v-for="item in contact" :key="item.id">
 								<img :src="item.image">
-								{{item.info}}
+								<span>{{item.info}}</span>
 							</div>
-							
-							<button class="contact-me">WORK TOGETHER</button>
+							<button class="contact-me">一起工作</button>
 						</div>
 					</div>
 				</div>
 				
 				<div class="card-buttons">
 					<button :class="active(1)" @click="selectTab(1)">关于</button>
-					<button :class="active(2)" @click="selectTab(2)">经验</button>
+					<button :class="active(2)" @click="selectTab(2)">经历</button>
 					<button :class="active(3)" @click="selectTab(3)">联系</button>
 				</div>
 			</div>
@@ -95,17 +92,20 @@ export default {
 	data(){
 		return {
 			index: 1,
+			imageUrl:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg01.e23.cn%2F2020%2F0224%2F20200224041337504.jpg&refer=http%3A%2F%2Fimg01.e23.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662453154&t=821e7d98bb6796c7da0b1039184239d1#pskt#&imgName=%u70B9%u51FB%u67E5%u770B%u56FE%u7247%u6765%u6E90&imgLink=https%3A%2F%2Fimage.baidu.com%2Fsearch%2Findex%3Ftn%3Dbaiduimage%26ps%3D1%26ct%3D201326592%26lm%3D-1%26cl%3D2%26nc%3D1%26ie%3Dutf-8%26dyTabStr%3DMCwzLDEsMiw2LDQsNSw3LDgsOQ%253D%253D%26word%3D%25E5%2591%25A8%25E6%259D%25B0%25E4%25BC%25A6',
 			timeline:[
-				{time:'2014', title:'Front-end Developer at JotForm', description:'Disrupt stumptown retro everyday carry unicorn.'},
-				{time:'2016', title:'UI Developer at GitHub', description:'Developed new conversion funnels and disrupt.'},
-				{time:'2018', title:'Illustrator at Google', description:'Onboarding illustrations for App.'},
-				{time:'2020', title:'Full-Stack Developer at CodePen<', description:'Responsible for the encomposing brand expreience.'},
+				{time:'2010', title:'《跨时代》', description:'第十张专辑'},
+				{time:'2011', title:'《惊叹号》', description:'第十一张专辑'},
+				{time:'2012', title:'《十二新作》', description:'第十二张专辑'},
+				{time:'2014', title:'《哎哟 不错哦》', description:'第十三张专辑'},
+				{time:'2016', title:'《周杰伦的床边故事》', description:'第十四张专辑'},
+				{time:'2022', title:'《最伟大的作品》', description:'第十五张专辑'},
 			],
 			
 			contact:[
-				{image:require('.././assets/images/change_skin.png'), info:'四川省巴中市通江县瓦室镇长春村麻坝里xxx号'},
-				{image:require('.././assets/images/change_skin.png'), info:'15284734517'},
-				{image: require('.././assets/images/change_skin.png'), info: 'jc.jingchao@qq.com'}
+				{image:require('.././assets/images/change_skin.png'), info:'中国台北市大安区和平东路上的何平大苑'},
+				{image:require('.././assets/images/change_skin.png'), info:'152xxxx4517'},
+				{image: require('.././assets/images/change_skin.png'), info: 'Jay Chou@xxx.com'}
 			]
 		}
 	},
@@ -123,22 +123,20 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
 
 
 .card-box {
 	font-family: "Jost", sans-serif;
-	
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
 	overflow: auto;
 	width: 100%;
-	margin: 20px 0px;
-
+	
 }
 
 .card {
@@ -146,10 +144,10 @@ export default {
 	background-color: rgba(255, 255, 255, 1);
 	display: flex;
 	flex-direction: column;
-	transition: 0.3s;
+	transition: 0.5s;
 	border-radius: 10px;
 	box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
-	
+	margin: 20px 0;
 }
 
 .card-header {
@@ -158,9 +156,11 @@ export default {
 	height: 200px;
 	flex-shrink: 0;
 	width: 100%;
-	transition: 0.3s;
+	transition: 0.5s;
 	
-	
+	*{
+		transition: 0.5s;
+	}
 	.card-avatar {
 		width: 100px;
 		height: 100px;
@@ -173,7 +173,6 @@ export default {
 		left: 50%;
 		transform: translateX(-50%) translateY(-64px);
 	}
-	
 	.card-fullname {
 		position: absolute;
 		bottom: 0;
@@ -236,6 +235,7 @@ export default {
 	position: relative;
 	flex: 1;
 	display: flex;
+	align-items: center;
 	padding-top: 10px;
 	flex-direction: column;
 	
@@ -334,6 +334,7 @@ export default {
 			}
 			
 			//第三块
+			
 			.card-contact-wrapper {
 				margin-top: 20px;
 				
@@ -345,6 +346,7 @@ export default {
 					font-family: "DM Sans", sans-serif;
 					line-height: 1.6;
 					cursor: pointer;
+					margin-bottom: 10px;
 					
 					& + & {
 						margin-top: 16px;
@@ -352,12 +354,14 @@ export default {
 					
 					img {
 						flex-shrink: 0;
-						width: 30px;
-						min-height: 34px;
-						margin-right: 12px;
+						width: 25px;
+						height: 25px;
 						transition: 0.3s;
-						padding-right: 12px;
-						border-right: 1px solid #dfe2ec;
+						margin-right: 10px;
+					}
+					span{
+						border-left: 1px solid #dfe2ec;
+						padding-left: 12px;
 					}
 				}
 				.contact-me {
@@ -378,7 +382,7 @@ export default {
 					font-size: 14px;
 					font-weight: 500;
 					font-family: "Jost", sans-serif;
-					transition: 0.3s;
+					transition: 0.5s;
 				}
 			}
 			
@@ -396,7 +400,7 @@ export default {
 				fill: rgb(165, 181, 206);
 				width: 16px;
 				display: block;
-				transition: 0.3s;
+				transition: 0.5s;
 			}
 			
 			a {
@@ -407,9 +411,8 @@ export default {
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
-				transition: 0.3s;
+				transition: 0.5s;
 				background-color: rgba(93, 133, 193, 0.05);
-				border-radius: 50%;
 				margin-right: 10px;
 				
 				&:hover {
@@ -426,14 +429,15 @@ export default {
 			
 		}
 	}
+	
 	//底部按钮
 	.card-buttons {
 		display: flex;
 		background-color: #fff;
 		margin-top: auto;
-		//position: sticky;
-		//bottom: 0;
-		//left: 0;
+		width: 98%;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
 		
 		button {
 			flex: 1 1 auto;
@@ -444,7 +448,7 @@ export default {
 			padding: 15px 5px;
 			cursor: pointer;
 			color: #5c5c6d;
-			transition: 0.3s;
+			transition: 0.5s;
 			font-family: "Jost", sans-serif;
 			font-weight: 500;
 			outline: 0;
@@ -464,10 +468,6 @@ export default {
 		}
 	}
 }
-
-
-
-
 
 
 </style>
