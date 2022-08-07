@@ -76,6 +76,7 @@
 					</div>
 				</div>
 				
+				<!--底部按钮-->
 				<div class="card-buttons">
 					<button :class="active(1)" @click="selectTab(1)">关于</button>
 					<button :class="active(2)" @click="selectTab(2)">经历</button>
@@ -132,7 +133,7 @@ export default {
 	font-family: "Jost", sans-serif;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
+	//flex-wrap: wrap;
 	align-items: center;
 	overflow: auto;
 	width: 100%;
@@ -147,7 +148,7 @@ export default {
 	transition: 0.5s;
 	border-radius: 10px;
 	box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
-	margin: 20px 0;
+	margin: 60px 0;
 }
 
 .card-header {
@@ -230,7 +231,6 @@ export default {
 	}
 }
 
-
 .card-main {
 	position: relative;
 	flex: 1;
@@ -246,7 +246,6 @@ export default {
 			display: block;
 			animation: fadeIn 0.6s both;
 		}
-		
 		
 		.card-content {
 			padding: 20px;
@@ -334,7 +333,6 @@ export default {
 			}
 			
 			//第三块
-			
 			.card-contact-wrapper {
 				margin-top: 20px;
 				
@@ -385,7 +383,6 @@ export default {
 					transition: 0.5s;
 				}
 			}
-			
 			
 		}
 		

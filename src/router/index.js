@@ -7,6 +7,8 @@ import ShortcutView from "@/views/ShortcutView";
 import GalleryView from "@/views/GalleryView";
 import ProfileCardView from "@/views/ProfileCardView";
 
+import ArticleDetailsView from "@/views/ArticleDetailsView";
+
 
 const routes = [
   {
@@ -45,6 +47,11 @@ const routes = [
         path: 'profileCard',
         name: 'profileCard',
         component: ProfileCardView,
+      },
+      {
+        path: 'articleDetails',
+        name: 'articleDetails',
+        component: ArticleDetailsView,
       }
     ]
   },
