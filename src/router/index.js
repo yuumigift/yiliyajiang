@@ -6,8 +6,8 @@ import NoveltyView from "@/views/NoveltyView";
 import ShortcutView from "@/views/ShortcutView";
 import GalleryView from "@/views/GalleryView";
 import ProfileCardView from "@/views/ProfileCardView";
-
 import ArticleDetailsView from "@/views/ArticleDetailsView";
+import ColorClipboardView from "@/views/ColorClipboardView";
 
 
 const routes = [
@@ -52,6 +52,11 @@ const routes = [
         path: 'articleDetails',
         name: 'articleDetails',
         component: ArticleDetailsView,
+      },
+      {
+        path: 'colorClipboard',
+        name: 'colorClipboard',
+        component: ColorClipboardView,
       }
     ]
   },
