@@ -8,6 +8,7 @@ import GalleryView from "@/views/GalleryView";
 import ProfileCardView from "@/views/ProfileCardView";
 import ArticleDetailsView from "@/views/ArticleDetailsView";
 import ColorClipboardView from "@/views/ColorClipboardView";
+import PracticalTableView from "@/views/PracticalTableView";
 
 
 const routes = [
@@ -57,6 +58,11 @@ const routes = [
         path: 'colorClipboard',
         name: 'colorClipboard',
         component: ColorClipboardView,
+      },
+      {
+        path: 'practicalTable',
+        name: 'practicalTable',
+        component: PracticalTableView,
       }
     ]
   },
