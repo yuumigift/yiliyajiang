@@ -102,7 +102,7 @@ export default {
         a {
             padding: 20px 30px;
             text-decoration: none;
-            //color: rgb(113 119 144 / 78%);
+			color: rgb(60, 62, 70);
             border-bottom: 2px solid transparent;
             transition: 0.3s;
             @media screen and (max-width: 610px) {

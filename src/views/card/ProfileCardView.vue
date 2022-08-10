@@ -95,18 +95,18 @@ export default {
 			index: 1,
 			imageUrl:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg01.e23.cn%2F2020%2F0224%2F20200224041337504.jpg&refer=http%3A%2F%2Fimg01.e23.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662453154&t=821e7d98bb6796c7da0b1039184239d1#pskt#&imgName=%u70B9%u51FB%u67E5%u770B%u56FE%u7247%u6765%u6E90&imgLink=https%3A%2F%2Fimage.baidu.com%2Fsearch%2Findex%3Ftn%3Dbaiduimage%26ps%3D1%26ct%3D201326592%26lm%3D-1%26cl%3D2%26nc%3D1%26ie%3Dutf-8%26dyTabStr%3DMCwzLDEsMiw2LDQsNSw3LDgsOQ%253D%253D%26word%3D%25E5%2591%25A8%25E6%259D%25B0%25E4%25BC%25A6',
 			timeline:[
-				{time:'2010', title:'《跨时代》', description:'第十张专辑'},
-				{time:'2011', title:'《惊叹号》', description:'第十一张专辑'},
-				{time:'2012', title:'《十二新作》', description:'第十二张专辑'},
-				{time:'2014', title:'《哎哟 不错哦》', description:'第十三张专辑'},
-				{time:'2016', title:'《周杰伦的床边故事》', description:'第十四张专辑'},
 				{time:'2022', title:'《最伟大的作品》', description:'第十五张专辑'},
+				{time:'2016', title:'《周杰伦的床边故事》', description:'第十四张专辑'},
+				{time:'2014', title:'《哎哟 不错哦》', description:'第十三张专辑'},
+				{time:'2012', title:'《十二新作》', description:'第十二张专辑'},
+				{time:'2011', title:'《惊叹号》', description:'第十一张专辑'},
+				{time:'2010', title:'《跨时代》', description:'第十张专辑'},
 			],
 			
 			contact:[
-				{image:require('.././assets/images/change_skin.png'), info:'中国台北市大安区和平东路上的何平大苑'},
-				{image:require('.././assets/images/change_skin.png'), info:'152xxxx4517'},
-				{image: require('.././assets/images/change_skin.png'), info: 'Jay Chou@xxx.com'}
+				{image:require('../../assets/images/change_skin.png'), info:'中国台北市大安区和平东路上的何平大苑'},
+				{image:require('../../assets/images/change_skin.png'), info:'152xxxx4517'},
+				{image: require('../../assets/images/change_skin.png'), info: 'Jay Chou@xxx.com'}
 			]
 		}
 	},
@@ -134,6 +134,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	//flex-wrap: wrap;
+	background-color: rgba(16 18 27 / 10%);
 	align-items: center;
 	overflow: auto;
 	width: 100%;

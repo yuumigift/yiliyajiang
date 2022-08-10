@@ -5,13 +5,10 @@
 			
 			<div class="item-apps-card">
 				<div class="app-card" v-for="item in products" :key="item.id">
-					<span>
-						<img :src="item.image">
-						{{ item.name }}
-					</span>
+					<span><img :src="item.image">{{ item.name }}</span>
 					<div class="app-card__subtext">{{item.recommend}}</div>
 					<div class="app-card-buttons">
-						<button class="content-button status-button">打开</button>
+						<button class="content-button status-button" @click="open(item.name)">打开</button>
 					</div>
 				</div>
 			</div>
@@ -22,10 +19,21 @@
 </template>
 
 <script>
+import router from "@/router";
+
 export default {
 	props: {
 		products: {
 			type: Array,
+		}
+	},
+	methods:{
+		open(componentName){
+			if (componentName === '画廊'){
+				router.push('/treasure/gallery')
+			}else if(componentName === '数字时钟'){
+				router.push('/treasure/digitalClock')
+			}
 		}
 	}
 }

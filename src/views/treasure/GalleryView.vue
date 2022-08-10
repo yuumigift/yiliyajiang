@@ -91,6 +91,7 @@ $brand: #5c4084;
 	align-items: center;
 	overflow: auto;
 	background-color: $brand;
+	background-color: rgba(16 18 27 / 10%);
 	text-align: center;
 	width: 100%;
 }

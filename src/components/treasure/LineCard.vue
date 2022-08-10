@@ -16,7 +16,7 @@
             <div class="button-wrapper">
                 <!-- 两种样式 -->
 				<!-- <button class="content-button status-button open">操作</button> -->
-                <button class="content-button status-button">打开</button>
+                <button class="content-button status-button" @click="open(item.name)">打开</button>
             </div>
         </li>
     </ul>
@@ -25,11 +25,20 @@
 
 <script>
 
+import router from "@/router";
+
 export default {
 	components: {},
 	props:{
 		recommend:{
 			type: Array,
+		}
+	},
+	methods: {
+		open(componentName){
+			if (componentName === '颜色剪切板'){
+				router.push('/treasure/colorClipboard')
+			}
 		}
 	}
 
@@ -37,10 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/** {
-    outline: none;
-    box-sizing: border-box;
-}*/
+
 .content-section {
     margin-top: 30px;
     display: flex;
