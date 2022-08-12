@@ -42,11 +42,6 @@ export default {
 
 <style lang="scss" scoped>
 
-
-img {
-	max-width: 100%;
-}
-
 .treasure {
 	display: flex;
 	flex-direction: column;

@@ -42,6 +42,7 @@ export default {
 	background: #050801;
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
+	//background-color: rgba(16 18 27 / 10%);
 	
 	a{
 		position: relative;

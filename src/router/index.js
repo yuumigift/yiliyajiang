@@ -7,15 +7,15 @@ import ShortcutView from "@/views/ShortcutView";
 import GalleryView from "@/views/treasure/GalleryView";
 import ProfileCardView from "@/views/card/ProfileCardView";
 import ArticleDetailsView from "@/views/ArticleDetailsView";
-import ColorClipboardView from "@/views/ColorClipboardView";
-import PracticalTableView from "@/views/PracticalTableView";
+import ColorClipboardView from "@/views/treasure/ColorClipboardView";
+import PracticalTableView from "@/views/useless/PracticalTableView";
 import DigitalClockView from "@/views/treasure/DigitalClockView";
 import userCardVIew from "@/views/card/UserCardVIew";
-import MagicCardView from "@/views/card/MagicCardView";
 import CatButterflyView from "@/views/beautiful/CatButterflyView";
 import DogRoseView from "@/views/beautiful/DogRoseView";
 import TimeButtonView from "@/views/gadget/TimeButtonView";
 import AnimationButtonView from "@/views/gadget/AnimationButtonView";
+import NewsCardView from "@/views/card/NewsCardView";
 
 
 const routes = [
@@ -86,9 +86,9 @@ const routes = [
         component: ProfileCardView,
       },
       {
-        path: 'magicCard',
-        name: 'magicCard',
-        component: MagicCardView
+        path: 'newsCard',
+        name: 'newsCard',
+        component: NewsCardView
       }
     ]
   },

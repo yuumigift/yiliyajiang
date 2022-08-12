@@ -40,6 +40,7 @@ export default {
 	width: 100%;
 	overflow: auto;
 	padding: 20px 40px;
+	background-color: rgba(16 18 27 / 10%);
 	//background-color: white;
 	
 	h1{

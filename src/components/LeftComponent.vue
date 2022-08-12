@@ -61,9 +61,7 @@ export default {
 					name:[
 						{id:1,imageUrl:'',name:'用户卡片',to:'/card/userCard'},
 						{id:2,imageUrl:'',name:'肖像卡片',to:'/card/profileCard'},
-						{id:3,imageUrl:'',name:'魔法卡片',to:'/card/magicCard'},
-						{id:4,imageUrl:'',name:'选项一',to:'#'},
-						{id:5,imageUrl:'',name:'选项一',to:'#'},
+						{id:3,imageUrl:'',name:'新闻卡片',to:'/card/newsCard'},
 					]
 				},
 				{
@@ -72,8 +70,6 @@ export default {
 					name:[
 						{id:1,imageUrl:'',name:'猫吻蝴蝶',to:'/beautiful/catButterfly'},
 						{id:2,imageUrl:'',name:'狗与玫瑰',to:'/beautiful/dogRose'},
-						{id:3,imageUrl:'',name:'选项一',to:'#'},
-						{id:5,imageUrl:'',name:'选项一',to:'#'},
 					]
 				},
 				{
@@ -82,10 +78,10 @@ export default {
 					name:[
 						{id:1,imageUrl:'',name:'流光按钮',to:'/gadget/timeButton'},
 						{id:2,imageUrl:'',name:'动画按钮',to:'/gadget/animationButton'},
-						{id:3,imageUrl:'',name:'选项一',to:'#'},
+						/*{id:3,imageUrl:'',name:'选项一',to:'#'},
 						{id:4,imageUrl:'',name:'选项一',to:'#'},
 						{id:5,imageUrl:'',name:'选项一',to:'#'},
-						{id:6,imageUrl:'',name:'选项一',to:'#'},
+						{id:6,imageUrl:'',name:'选项一',to:'#'},*/
 					]
 				},
 			]
@@ -133,9 +129,11 @@ export default {
 		border-radius: 6px;
 		transition: 0.3s;
 		
-		&:hover,
-		a.active {
+		&:hover {
 			background-color: rgba(12 15 25 / 30%);
+		}
+		&.active {
+			color: #db6ff3;
 		}
 	}
 	

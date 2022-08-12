@@ -24,6 +24,7 @@ export default {
 		width: 100%;
 		padding: 20px;
 		position: relative;
+		background-color: rgba(16 18 27 / 10%);
 		
 		img{
 			width: calc(100% - 40px);
