@@ -6,7 +6,7 @@ import NoveltyView from "@/views/NoveltyView";
 import ShortcutView from "@/views/ShortcutView";
 import GalleryView from "@/views/treasure/GalleryView";
 import ProfileCardView from "@/views/card/ProfileCardView";
-import ArticleDetailsView from "@/views/ArticleDetailsView";
+import ArticleDetailsView from "@/views/gadget/ArticleDetailsView";
 import ColorClipboardView from "@/views/treasure/ColorClipboardView";
 import PracticalTableView from "@/views/useless/PracticalTableView";
 import DigitalClockView from "@/views/treasure/DigitalClockView";
@@ -16,6 +16,8 @@ import DogRoseView from "@/views/beautiful/DogRoseView";
 import TimeButtonView from "@/views/gadget/TimeButtonView";
 import AnimationButtonView from "@/views/gadget/AnimationButtonView";
 import NewsCardView from "@/views/card/NewsCardView";
+import RandomQuoteView from "@/views/gadget/RandomQuoteView";
+import PersonInfoView from "@/views/gadget/PersonInfoView";
 
 
 const routes = [
@@ -126,6 +128,21 @@ const routes = [
         path: 'animationButton',
         name: 'animationButton',
         component: AnimationButtonView
+      },
+      {
+        path: 'articleDetails',
+        name: 'articleDetails',
+        component: ArticleDetailsView,
+      },
+      {
+        path: 'randomQuote',
+        name: 'randomQuote',
+        component: RandomQuoteView
+      },
+      {
+        path:'personInfo',
+        name:'personInfo',
+        component: PersonInfoView
       }
     ]
   },
@@ -136,11 +153,7 @@ const routes = [
 
 
 
-  {
-    path: '/articleDetails',
-    name: 'articleDetails',
-    component: ArticleDetailsView,
-  },
+
 
   {
     path: '/practicalTable',

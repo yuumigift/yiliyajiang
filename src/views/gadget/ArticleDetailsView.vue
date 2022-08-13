@@ -46,11 +46,11 @@
 				<p>我躺在多年前的床上，听着窗外又开始下雨。我没理会，觉得那是一场象征性的雨，仿佛只为制造氛围。但雨声越来越大，噼噼啪啪地在窗外聒噪，我又不得不相信那是一场真正的滂沱大雨。雨声有些陈旧，像是特意响给我一个人听，竖起耳朵的我，不愿意放过任何一丝声音。我像要找一些东西，又像是无所事事，只是单纯地存在着；雨为我演奏一首音乐，这是对我长途跋涉后的褒奖。</p>
 				<p>我不知道这场雨下多久，于是我决定睡去，我遇到无能为力的事情时总爱睡去，时间终究能将所有的问题解决。我相信一场梦长不过一场雨。接下来，我将开始另一场梦。</p>
 				<div class="gallery">
-					<div class="image-item image-1" alt="" width="200" :style="{backgroundImage: 'url(' + require('.././assets/images/article/2.jpeg') + ')'}"></div>
-					<div class="image-item image-2" alt="" width="200" :style="{backgroundImage: 'url(' + require('.././assets/images/article/3.jpeg') + ')'}"></div>
-					<div class="image-item image-3" alt="" width="200" :style="{backgroundImage: 'url(' + require('.././assets/images/article/4.jpeg') + ')'}"></div>
-					<div class="image-item image-4" alt="" width="200" :style="{backgroundImage: 'url(' + require('.././assets/images/article/5.jpeg') + ')'}"></div>
-					<div class="image-item image-5" alt="" width="200" :style="{backgroundImage: 'url(' + require('.././assets/images/article/6.jpeg') + ')'}"></div>
+					<div class="image-item image-1" alt="" width="200" :style="{backgroundImage: 'url(' + require('../../assets/images/article/2.jpeg') + ')'}"></div>
+					<div class="image-item image-2" alt="" width="200" :style="{backgroundImage: 'url(' + require('../../assets/images/article/3.jpeg') + ')'}"></div>
+					<div class="image-item image-3" alt="" width="200" :style="{backgroundImage: 'url(' + require('../../assets/images/article/4.jpeg') + ')'}"></div>
+					<div class="image-item image-4" alt="" width="200" :style="{backgroundImage: 'url(' + require('../../assets/images/article/5.jpeg') + ')'}"></div>
+					<div class="image-item image-5" alt="" width="200" :style="{backgroundImage: 'url(' + require('../../assets/images/article/6.jpeg') + ')'}"></div>
 				</div>
 				
 				<h4>二、雨中行走</h4>
@@ -107,6 +107,7 @@ export default {
 	justify-content: center;
 	width: 100%;
 	//height: calc(max(100vh, 400px));
+	background-color: rgba(16 18 27 / 10%);
 	padding: 20px 40px;
 	color: white;
 	font-family: "Plus Jakarta Sans", sans-serif;
@@ -128,7 +129,7 @@ export default {
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
-			background-image: url(".././assets/images/article/1.jpeg");
+			background-image: url("../../assets/images/article/1.jpeg");
 			
 			.upper-header {
 				display: flex;
