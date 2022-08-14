@@ -18,6 +18,8 @@ import AnimationButtonView from "@/views/gadget/AnimationButtonView";
 import NewsCardView from "@/views/card/NewsCardView";
 import RandomQuoteView from "@/views/gadget/RandomQuoteView";
 import PersonInfoView from "@/views/gadget/PersonInfoView";
+import GreenEyesCatView from "@/views/beautiful/GreenEyesCatView";
+import HoverButtonView from "@/views/gadget/HoverButtonView";
 
 
 const routes = [
@@ -110,6 +112,11 @@ const routes = [
         path: 'dogRose',
         name: 'dogRose',
         component: DogRoseView
+      },
+      {
+        path: 'greenEyesCat',
+        name: 'greenEyesCat',
+        component: GreenEyesCatView
       }
     ]
   },
@@ -143,6 +150,11 @@ const routes = [
         path:'personInfo',
         name:'personInfo',
         component: PersonInfoView
+      },
+      {
+        path: 'hoverButton',
+        name: 'hoverButton',
+        component: HoverButtonView
       }
     ]
   },

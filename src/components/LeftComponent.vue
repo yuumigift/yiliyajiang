@@ -70,6 +70,7 @@ export default {
 					name:[
 						{id:1,imageUrl:'',name:'猫吻蝴蝶',to:'/beautiful/catButterfly'},
 						{id:2,imageUrl:'',name:'狗与玫瑰',to:'/beautiful/dogRose'},
+						{id:2,imageUrl:'',name:'绿眼猫咪',to:'/beautiful/greenEyesCat'},
 					]
 				},
 				{
@@ -81,7 +82,7 @@ export default {
 						{id:3,imageUrl:'',name:'文章详情页',to:'/gadget/articleDetails'},
 						{id:4,imageUrl:'',name:'随机金句',to:'/gadget/randomQuote'},
 						{id:5,imageUrl:'',name:'个人信息页',to:'/gadget/personInfo'},
-						/*{id:6,imageUrl:'',name:'选项一',to:'#'},*/
+						{id:6,imageUrl:'',name:'按钮悬停样式',to:'/gadget/hoverButton'},
 					]
 				},
 			]
