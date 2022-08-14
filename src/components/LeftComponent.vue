@@ -80,11 +80,17 @@ export default {
 						{id:1,imageUrl:'',name:'流光按钮',to:'/gadget/timeButton'},
 						{id:2,imageUrl:'',name:'动画按钮',to:'/gadget/animationButton'},
 						{id:3,imageUrl:'',name:'文章详情页',to:'/gadget/articleDetails'},
-						{id:4,imageUrl:'',name:'随机金句',to:'/gadget/randomQuote'},
-						{id:5,imageUrl:'',name:'个人信息页',to:'/gadget/personInfo'},
-						{id:6,imageUrl:'',name:'按钮悬停样式',to:'/gadget/hoverButton'},
+						{id:4,imageUrl:'',name:'个人信息页',to:'/gadget/personInfo'},
+						{id:5,imageUrl:'',name:'按钮悬停样式',to:'/gadget/hoverButton'},
 					]
 				},
+				{
+					pId:4,
+					pName: '小游戏',
+					name:[
+						{id:1,imageUrl:'',name:'井字棋',to:'/games/tictactoe'}
+					]
+				}
 			]
 		}
 	}

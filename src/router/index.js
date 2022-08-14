@@ -16,10 +16,10 @@ import DogRoseView from "@/views/beautiful/DogRoseView";
 import TimeButtonView from "@/views/gadget/TimeButtonView";
 import AnimationButtonView from "@/views/gadget/AnimationButtonView";
 import NewsCardView from "@/views/card/NewsCardView";
-import RandomQuoteView from "@/views/gadget/RandomQuoteView";
 import PersonInfoView from "@/views/gadget/PersonInfoView";
 import GreenEyesCatView from "@/views/beautiful/GreenEyesCatView";
 import HoverButtonView from "@/views/gadget/HoverButtonView";
+import TictactoeView from "@/views/games/TictactoeView";
 
 
 const routes = [
@@ -142,11 +142,6 @@ const routes = [
         component: ArticleDetailsView,
       },
       {
-        path: 'randomQuote',
-        name: 'randomQuote',
-        component: RandomQuoteView
-      },
-      {
         path:'personInfo',
         name:'personInfo',
         component: PersonInfoView
@@ -159,9 +154,18 @@ const routes = [
     ]
   },
 
-
-
-
+  //  小游戏
+  {
+    path: '/games',
+    name: 'games',
+    children: [
+      {
+        path: 'tictactoe',
+        name: 'tictactoe',
+      component: TictactoeView
+      }
+    ]
+  },
 
 
 
