@@ -2,7 +2,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import TreasureView from "@/views/TreasureView";
 import RecordView from "@/views/RecordView";
-import NoveltyView from "@/views/NoveltyView";
 import ShortcutView from "@/views/ShortcutView";
 import GalleryView from "@/views/treasure/GalleryView";
 import ProfileCardView from "@/views/card/ProfileCardView";
@@ -28,6 +27,7 @@ const routes = [
     name:'index',
     redirect:'/treasure',
   },
+
   //  百宝箱
   {
     path: '/treasure',
@@ -59,12 +59,6 @@ const routes = [
     component: RecordView
   },
 
-  //  每日颖
-  {
-    path:'/novelty',
-    name:'novelty',
-    component: NoveltyView
-  },
 
   //  喜捷径
   {
@@ -166,8 +160,6 @@ const routes = [
       }
     ]
   },
-
-
 
 
 

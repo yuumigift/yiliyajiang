@@ -94,9 +94,6 @@ export default {
 				flex-wrap: wrap;
 				margin-right: -30px;
 				
-				&:last-child {
-					margin-top: 120px;
-				}
 				
 				.box {
 					width: calc(33.333333% - 30px);
@@ -104,23 +101,19 @@ export default {
 					font-size: 1em;
 					line-height: 1.5em;
 					font-weight: 200;
-					padding: 0 4vw 4vw;
+					padding: 0 1vw 1vw;
+					margin-bottom: 40px;
 					border-right: 2px;
-					border-left: 0px;
+					border-left: 0;
 					border-style: solid;
-					/* 	border-image: linear-gradient(to bottom, #ccc, #555 66%, #181818) 1 100%; */
+					//text-align: left;
+					//border-image: linear-gradient(to bottom, #ccc, #555 66%, #181818) 1 100%;
 					border-image: linear-gradient(to bottom, #181818, #eee, #181818) 1 100%;
-					
-					
-					// 只选取三的倍数的元素
-					&:nth-child(3n){
-						border-right: 0;
-					}
 					
 					
 					h2 {
 						font-size: 1.3em;
-						text-transform: uppercase;
+						//text-transform: uppercase;
 						letter-spacing: 4px;
 						font-weight: 200;
 						line-height: 0.5em;
@@ -139,6 +132,31 @@ export default {
 					&:hover{
 						transform: scale(1.02);
 						background-color: rgba(16 18 27 / 20%);
+					}
+					
+					@media screen and (min-width: 1000px){
+						// 只选取三的倍数的元素
+						&:nth-child(3n){
+							border-right: 0;
+						}
+					}
+					
+					@media screen and (max-width: 1000px) {
+						width: calc(50% - 30px);
+						
+						&:nth-child(2n){
+							border-right: 0;
+						}
+						
+					}
+					@media screen and (max-width: 565px) {
+						width: calc(100% - 30px);
+						padding: 0 5vw 1vw;
+						border-right: 0;
+						border-left: 2px;
+						border-style: solid;
+						border-image: linear-gradient(to bottom, #181818, #eee, #181818) 1 100%;
+						
 					}
 				}
 				

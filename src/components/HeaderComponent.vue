@@ -11,7 +11,6 @@
         <div class="header-menu" :class="{'header-menu-change-search':isChangeSearch}">
             <router-link  active-class="active" to="/treasure">百宝箱</router-link>
             <router-link  active-class="active" to="/record">记录线</router-link>
-            <router-link  active-class="active" to="/novelty">每日颖</router-link>
             <router-link  active-class="active" to="/shortcut">喜捷径</router-link>
         </div>
         <!-- 搜索框 -->
@@ -22,15 +21,11 @@
         <!-- 头像区域 -->
         <div class="header-profile">
             <div class="notification">
-                <span class="notification-number">3</span>
-                <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>
-                </svg>
+                <span class="notification-number">9</span>
+				<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M384 960v-64h192.064v64H384zm448-544a350.656 350.656 0 0 1-128.32 271.424C665.344 719.04 640 763.776 640 813.504V832H320v-14.336c0-48-19.392-95.36-57.216-124.992a351.552 351.552 0 0 1-128.448-344.256c25.344-136.448 133.888-248.128 269.76-276.48A352.384 352.384 0 0 1 832 416zm-544 32c0-132.288 75.904-224 192-224v-64c-154.432 0-256 122.752-256 288h64z"></path></svg>
             </div>
-            <svg viewBox="0 0 512 512" fill="currentColor">
-                <path d="M448.773 235.551A135.893 135.893 0 00451 211c0-74.443-60.557-135-135-135-47.52 0-91.567 25.313-115.766 65.537-32.666-10.59-66.182-6.049-93.794 12.979-27.612 19.013-44.092 49.116-45.425 82.031C24.716 253.788 0 290.497 0 331c0 7.031 1.703 13.887 3.006 20.537l.015.015C12.719 400.492 56.034 436 106 436h300c57.891 0 106-47.109 106-105 0-40.942-25.053-77.798-63.227-95.449z"/>
-            </svg>
-            <img class="profile-img" src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
+			<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" data-v-029747aa=""><path fill="currentColor" d="M764.416 254.72a351.68 351.68 0 0 1 86.336 149.184H960v192.064H850.752a351.68 351.68 0 0 1-86.336 149.312l54.72 94.72-166.272 96-54.592-94.72a352.64 352.64 0 0 1-172.48 0L371.136 936l-166.272-96 54.72-94.72a351.68 351.68 0 0 1-86.336-149.312H64v-192h109.248a351.68 351.68 0 0 1 86.336-149.312L204.8 160l166.208-96h.192l54.656 94.592a352.64 352.64 0 0 1 172.48 0L652.8 64h.128L819.2 160l-54.72 94.72zM704 499.968a192 192 0 1 0-384 0 192 192 0 0 0 384 0z"></path></svg>
+            <img class="profile-img" src="https://portrait.gitee.com/uploads/avatars/user/3271/9815958_a-jingchao_1656462089.png!avatar200#pskt#&imgName=9815958%20a%20jingchao%201656462089&imgLink=https%3A%2F%2Fgitee.com%2Fa-jingchao" alt="">
         </div>
     </div>
 </template>
@@ -179,9 +174,11 @@ export default {
     .header-profile {
         display: flex;
         align-items: center;
+		//text-align: center;
         padding: 0 16px 0 40px;
         margin-left: auto;
         flex-shrink: 0;
+		
         svg {
             width: 22px;
             color: #f9fafb;
@@ -190,6 +187,7 @@ export default {
 
         .notification {
             position: relative;
+			top: 2px;
             &-number {
                 position: absolute;
                 background-color: #3a6df0;
