@@ -9,7 +9,9 @@
         <div class="content-text">{{wrapper[0].content}}</div>
         <button class="content-button">立即查看</button>
     </div>
-    <img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="">
+    <!--<img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="">-->
+    <img class="content-wrapper-img" src="../../assets/images/vue_row.png">
+	
 </div>
 </template>
 
@@ -35,7 +37,7 @@ export default {
 	width: 100%;
 	justify-content: space-between;
 	background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
-	linear-gradient(
+	/*linear-gradient(
 			to right top,
 			#cf4af3,
 			#e73bd7,
@@ -49,7 +51,9 @@ export default {
 			#ffaa49,
 			#ffc848,
 			#ffe652
-	);
+	);*/
+	linear-gradient(45deg,#4bc0c8,#c779d0,#feac5e);
+	//linear-gradient( 135deg, #EE9AE5 10%, #5961F9 100%);
 
 	border-radius: 14px;
 	padding: 20px 40px;
@@ -87,9 +91,8 @@ export default {
 
     }
     .content-wrapper-img {
-        width: 186px;
+        width: 160px;
         object-fit: cover;
-        margin-top: -25px;
         object-position: center;
         @media screen and (max-width: 570px) {
             width: 110px;

@@ -117,8 +117,9 @@ export default {
 			border: none;
 			cursor: pointer;
 			margin: 0 10px 25px;
-			min-width: 150px;
+			min-width: 140px;
 			padding: 0;
+			
 		}
 		.btn span {
 			position: relative;

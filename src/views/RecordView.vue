@@ -20,7 +20,7 @@ export default {
 	data(){
 		return {
 			list:[
-				//{id:10,title:'',time:'',content:''},
+				{id:10,title:'魔法诗完成',time:'2022-08-15',content:'魔法诗页面基本完成，待细节完善。'},
 				{id:9,title:'喜捷径',time:'2022-08-14',content:'完成了喜捷径页面的开发，较为重大的更新了路由信息'},
 				{id:8,title:'HoverButton',time:'2022-08-14',content:'创建并且完成了HoverButton.vue的代码开发'},
 				{id:7,title:'个人信息页面',time:'2022-08-13',content:'完成开发个人信息界面，其中主要包含了邓紫棋的信息，包括个人资料和发布的专辑信息。'},
@@ -38,20 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-	/*.record{
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-		color: #fff;
-		padding: 20px 40px;
-		height: 100%;
-		overflow: auto;
-		background-color: rgba(16 18 27 / 10%);
-		@media screen and (max-width: 510px) {
-			padding: 20px;
-		}
-	}*/
 	
 	@import url("https://fonts.googleapis.com/css?family=Lato:200,300,400,400i,700");
 	@import url("https://fonts.googleapis.com/css?family=Merriweather:200,400,400i,700");
