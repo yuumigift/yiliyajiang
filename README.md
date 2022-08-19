@@ -15,7 +15,6 @@ git clone https://gitee/a-jingchao/magic-poetry
 ![](src/assets/git_images/Image1.png)
 
 
-
 ## 3、项目技术
 
 1. vue3
@@ -44,18 +43,20 @@ git clone https://gitee/a-jingchao/magic-poetry
 ![](src/assets/git_images/Image5.png)
 ![](src/assets/git_images/Image6.png)
 ##### 4.2.2.2 界面说明
+颜色剪切板所在的vue文件为ColorClipboardView.vue，进入到此页面，用户可以通过输入颜色、年份、季节或者十六进制代码来查询需要的颜色，点击颜色快就可以复制颜色的十六进制代码，如上图所示。
 
 #### 4.2.3 画廊
 ##### 4.2.3.1 页面预览
 ![](src/assets/git_images/Image7.png)
 
 ##### 4.2.3.2 界面说明
+画廊所在的vue文件为GalleryView.vue，用户可以通过左右按钮来选择图片或者通过底部的图片列表来选择图片。
 
 #### 4.2.4 数字时钟
 ##### 4.2.4.1 页面预览
 ![](src/assets/git_images/Image8.png)
 ##### 4.2.4.2 界面说明
-
+数字时钟所在的vue文件为DigitalClockView.vue，页面时间将动态更新。
 
 
 ### 4.3 记录线
@@ -82,6 +83,7 @@ git clone https://gitee/a-jingchao/magic-poetry
 ![](src/assets/git_images/Image12.png)
 
 ##### 4.5.1.2 界面说明
+用户卡片所在的vue文件为UserCardView.vue，卡片有两种不同的状态，默认状态与鼠标划过状态分别如上图所示。
 
 
 #### 4.5.2 肖像卡片
@@ -91,7 +93,7 @@ git clone https://gitee/a-jingchao/magic-poetry
 ![](src/assets/git_images/Image15.png)
 
 ##### 4.5.2.2 界面说明
-
+肖像卡片所在的vue文件为ProfileCardView.vue，肖像卡片有三种不同的样式，用户选择底部的按钮可以切换不同的状态进而可以展示不同的信息。具体实现细节参加项目源代码。
 
 #### 4.5.3 新闻卡片
 ##### 4.5.3.1 页面预览
@@ -149,7 +151,7 @@ git clone https://gitee/a-jingchao/magic-poetry
 ![](src/assets/git_images/Image24.png)
 
 ##### 4.7.3.2 界面说明
-文章详情页所在的vue文件为ArticleDetailsView.vue，其中主要包含了封面介绍页，文章信息展示以及文章中的引用等。
+文章详情页所在的vue文件为ArticleDetailsView.vue，其中主要包含了封面介绍页，文章信息展示以及文章中的引用等。具体实现细节参见项目源代码。
 
 
 #### 4.7.4 个人信息页
