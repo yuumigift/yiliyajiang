@@ -111,7 +111,6 @@ git clone https://gitee/a-jingchao/magic-poetry
 ##### 4.6.1.2 界面说明
 猫吻蝴蝶所在的vue文件为CatButterflyView.vue，其中图片上方的两个按钮皆为同一种类型的边框流动按钮，光标移动到按钮上的样式如图中的第二个按钮。
 
-
 #### 4.6.2 狗与玫瑰
 ##### 4.6.2.1 页面预览
 ![](src/assets/git_images/Image18.png)
@@ -172,5 +171,5 @@ git clone https://gitee/a-jingchao/magic-poetry
 按钮悬停样式所在的vue文件为HoverButtonView.vue，此按钮与动画按钮相比较更加的朴素，低调，但是每个按钮也都具备了自己的特点，详细参见项目源代码。
 
 
-
+#### 完
 
