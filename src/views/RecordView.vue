@@ -44,7 +44,7 @@ export default {
 	
 	.record {
 		background-color: #181818;
-		//background-color: rgba(16 18 27 / 10%);
+		background-color: rgba(16 18 27 / 10%);
 		color: #d8d8d8;
 		font-family: Lato, sans-serif;
 		padding: 20px 40px;
@@ -63,11 +63,13 @@ export default {
 				content: '─';
 				margin-right: 0.6em;
 				color: #686868;
+				color: #d8d8d8;
 			}
 			&::after {
 				content: '─';
 				margin-left: 0.6em;
 				color: #686868;
+				color: #d8d8d8;
 			}
 		}
 		
@@ -94,7 +96,8 @@ export default {
 					border-style: solid;
 					//text-align: left;
 					//border-image: linear-gradient(to bottom, #ccc, #555 66%, #181818) 1 100%;
-					border-image: linear-gradient(to bottom, #181818, #eee, #181818) 1 100%;
+					//border-image: linear-gradient(to bottom, #181818, #eee, #181818) 1 100%;
+					border-image: linear-gradient(to bottom, #10121B19, white, #10121B19) 1 100%;
 					
 					
 					h2 {
@@ -117,10 +120,11 @@ export default {
 					
 					&:hover{
 						transform: scale(1.02);
-						background-color: rgba(16 18 27 / 20%);
+						//background-color: rgba(16 18 27 / 20%);
 					}
 					
 					@media screen and (min-width: 1000px){
+						
 						// 只选取三的倍数的元素
 						&:nth-child(3n){
 							border-right: 0;

@@ -95,7 +95,7 @@ export default {
 	line-height: 1.6;
 	box-sizing: border-box;
 	
-	
+	background-color: rgba(16 18 27 / 10%);
 	overflow-x: hidden;
 }
 
@@ -104,8 +104,9 @@ export default {
 	//padding: 0 var(--s3);
 	padding: 20px 40px;
 	
+	
 	.header{
-		height: 400px;
+		height: 330px;
 		color: #ffffff;
 		display: flex;
 		flex-wrap: wrap;
@@ -123,13 +124,16 @@ export default {
 			flex-direction: column;
 			width: 60%;
 			
+			
 			h2{
 				font-size: 2.5rem;
 				font-weight: 500;
+				margin: 0;
 			}
 			h6{
 				font-size: 1rem;
 				font-weight: 350;
+				margin: 14px 0 0;
 			}
 			//background-color: green;
 		}
@@ -182,7 +186,8 @@ ul {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: var(--color-brand-accent-bg);
+		//background: var(--color-brand-accent-bg);
+		background-color: rgba(16 18 27 / 20%);
 		width: 100%;
 		height: 100%;
 		transform: skew(0deg, 10deg);
