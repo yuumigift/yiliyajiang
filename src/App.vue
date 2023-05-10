@@ -88,7 +88,7 @@ video {
 .wrapper {
 	display: flex;
 	flex-grow: 1;
-	overflow: hidden;
+	overflow: auto !important;
 }
 
 /*浏览器滚动条样式*/
