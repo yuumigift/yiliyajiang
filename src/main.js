@@ -7,7 +7,7 @@ import '@/assets/css/mouse.css'
 import axios from "axios";
 import store from './store';
 import Antd from 'ant-design-vue';
-import antdcss from 'antd/dist/reset.css'
+import 'antd/dist/reset.css'
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 router.beforeEach((to, from, next) => {
     document.title = `${to.meta.title}`;
@@ -30,7 +30,7 @@ router.beforeEach((to, from, next) => {
     }
 })
 
-createApp(App).use(router,store,Antd).mount('#app')
+createApp(App).use(router).use(store).use(Antd).mount('#app')
 // app.config.globalProperties.initAudio = initAudio    // main.ts/js 文件中
 
 
