@@ -1,173 +1,112 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import TreasureView from "@/views/TreasureView";
-import RecordView from "@/views/RecordView";
-import ShortcutView from "@/views/ShortcutView";
-import GalleryView from "@/views/treasure/GalleryView";
-import ProfileCardView from "@/views/card/ProfileCardView";
-import ArticleDetailsView from "@/views/gadget/ArticleDetailsView";
-import ColorClipboardView from "@/views/treasure/ColorClipboardView";
-import PracticalTableView from "@/views/useless/PracticalTableView";
-import DigitalClockView from "@/views/treasure/DigitalClockView";
-import userCardVIew from "@/views/card/UserCardVIew";
-import CatButterflyView from "@/views/beautiful/CatButterflyView";
-import DogRoseView from "@/views/beautiful/DogRoseView";
-import TimeButtonView from "@/views/gadget/TimeButtonView";
-import AnimationButtonView from "@/views/gadget/AnimationButtonView";
-import NewsCardView from "@/views/card/NewsCardView";
-import PersonInfoView from "@/views/gadget/PersonInfoView";
-import GreenEyesCatView from "@/views/beautiful/GreenEyesCatView";
-import HoverButtonView from "@/views/gadget/HoverButtonView";
-import TictactoeView from "@/views/games/TictactoeView";
+import TictactoeView from "@/views/home/TictactoeView";
+import DongfangProjectView from "@/views/home/DongfangProjectView.vue";
+import HappyBirthdayView from "@/views/home/HappyBirthdayView.vue";
+import StarView from "@/views/home/StarView.vue";
+import Login from "@/views/Login.vue";
+import hiddenLoginView from "@/views/home/HiddenLoginView.vue";
+import HomeView from "@/views/publicHome/HomeView.vue";
+import MessageBoardView from "@/views/publicHome/MessageBoardView.vue";
+
+import ReportView from "@/views/300report/ReportView.vue";
 
 
 const routes = [
   {
     path: '/',
-    name:'index',
-    redirect:'/treasure',
+    redirect:'/login',
   },
 
-  //  百宝箱
   {
-    path: '/treasure',
-    name: 'treasure',
-    component: TreasureView,
-    children:[
-      {
-        path: 'gallery',
-        name: 'gallery',
-        component: GalleryView,
-      },
-      {
-        path: 'digitalClock',
-        name: 'digitalClock',
-        component: DigitalClockView
-      },
-      {
-        path: 'colorClipboard',
-        name: 'colorClipboard',
-        component: ColorClipboardView,
-      },
-    ]
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta:{
+      title:'登录'
+    }
   },
-
-  //记录线
   {
-    path:'/record',
-    name:'record',
-    component: RecordView
+    path: '/hidden/login',
+    name: 'hiddenLogin',
+    component: hiddenLoginView,
+    meta:{
+      title:'祝你生日快乐'
+    }
   },
-
-
-  //  喜捷径
   {
-    path:'/shortcut',
-    name:'shortcut',
-    component: ShortcutView
+    path: '/public',
+    name: 'public',
+    children: [
+        {
+          path: '/home',
+          name: 'home',
+          component: HomeView,
+          meta: {
+            title: '今生无悔入东方，来世愿生幻想乡！'
+          }
+        },
+        {
+          path: '/messageBoard',
+          name: 'messageBoard',
+          component: MessageBoardView,
+          meta: {
+            title: '留言板'
+          }
+        }]
   },
-
-
-  //  炫酷卡片
   {
-    path:'/card',
-    name: 'card',
+    path: '/你以为你来到这个页面就能访问了吗，没想到吧~',
+    name: 'baka',
+    meta: {
+       title:'真是个笨蛋呢~'
+    }
+  },
+  {
+    path: '/300report',
+    name: '300report',
+    component: ReportView,
+    meta: {
+      title: '300战绩查询'
+    }
+  },
+  //  首页
+  {
+    path: '/',
+    name: 'index',
     children: [
       {
-        path: 'userCard',
-        name: 'userCard',
-        component: userCardVIew,
-      },
-      {
-        path: 'profileCard',
-        name: 'profileCard',
-        component: ProfileCardView,
-      },
-      {
-        path: 'newsCard',
-        name: 'newsCard',
-        component: NewsCardView
-      }
-    ]
-  },
-
-
-  //优美画面
-  {
-    path: '/beautiful',
-    name: 'beautiful',
-    children: [
-      {
-        path: 'catButterfly',
-        name: 'catButterfly',
-        component: CatButterflyView
-      },
-      {
-        path: 'dogRose',
-        name: 'dogRose',
-        component: DogRoseView
-      },
-      {
-        path: 'greenEyesCat',
-        name: 'greenEyesCat',
-        component: GreenEyesCatView
-      }
-    ]
-  },
-
-  //小玩意儿
-  {
-    path: '/gadget',
-    name: 'gadget',
-    children: [
-      {
-        path: 'timeButton',
-        name: 'timeButton',
-        component: TimeButtonView
-      },
-      {
-        path: 'animationButton',
-        name: 'animationButton',
-        component: AnimationButtonView
-      },
-      {
-        path: 'articleDetails',
-        name: 'articleDetails',
-        component: ArticleDetailsView,
-      },
-      {
-        path:'personInfo',
-        name:'personInfo',
-        component: PersonInfoView
-      },
-      {
-        path: 'hoverButton',
-        name: 'hoverButton',
-        component: HoverButtonView
-      }
-    ]
-  },
-
-  //  小游戏
-  {
-    path: '/games',
-    name: 'games',
-    children: [
-      {
-        path: 'tictactoe',
+        path: '/hidden/tictactoe',
         name: 'tictactoe',
-      component: TictactoeView
+        component: TictactoeView,
+        meta:{
+          title:'生日快乐！'
+        }
+      },
+      {
+        path: '/hidden/dongfangProject',
+        name: 'dongfangProject',
+        component: DongfangProjectView,
+        meta: {
+          title: '秋姉妹のなく顷に'
+        }
+      },
+      {
+        path: '/hidden/happyBirthday',
+        name: 'happyBirthday',
+        component: HappyBirthdayView
+      },
+      {
+        path: '/hidden/home',
+        name: '首页',
+        component: StarView,
+        meta:{
+          requireAuth:true,
+          title: '首页'
+        },
       }
     ]
   },
-
-
-
-  {
-    path: '/practicalTable',
-    name: 'practicalTable',
-    component: PracticalTableView,
-  }
 ]
 
 const router = createRouter({

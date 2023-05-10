@@ -7,7 +7,7 @@
             {{wrapper[0].name}}
         </h3>
         <div class="content-text">{{wrapper[0].content}}</div>
-        <button class="content-button">立即查看</button>
+        <button class="content-button" @click="jump">立即查看</button>
     </div>
     <!--<img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="">-->
     <img class="content-wrapper-img" src="../../assets/images/vue_row.png">
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import router from "@/router";
+
 export default {
 	props:{
 		wrapper:Array,
@@ -24,7 +26,12 @@ export default {
 		return {
 		
 		}
-	}
+	},
+    methods:{
+        jump(){
+            router.push('/home/tictactoe')
+        }
+    }
 }
 </script>
 

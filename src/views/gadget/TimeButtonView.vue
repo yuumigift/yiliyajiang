@@ -21,12 +21,22 @@
 			<span></span>
 			|---流光按钮---|
 		</a>
+		<MyButton
+				message="测试"
+		></MyButton>
 	</div>
 </template>
 
 <script>
+import MyButton from "@/components/button/MyButton.vue";
+
 export default {
-	name: "TimeButton"
+	name: "TimeButton",
+	components: {MyButton},
+	init(){
+	},
+	methods:{
+	}
 }
 </script>
 

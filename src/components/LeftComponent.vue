@@ -55,7 +55,7 @@ export default {
 	data(){
 		return {
 			catalogue:[
-				{
+/*				{
 					pId: 1,
 					pName: '炫酷卡片',
 					name:[
@@ -86,11 +86,11 @@ export default {
 				},
 				{
 					pId:4,
-					pName: '小游戏',
+					pName: '首页',
 					name:[
-						{id:1,imageUrl:'',name:'井字棋',to:'/games/tictactoe'}
+						{id:1,imageUrl:'',name:'井字棋',to:'/home/tictactoe'}
 					]
-				}
+				}*/
 			]
 		}
 	}
