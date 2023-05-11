@@ -26,19 +26,8 @@ export default {
             mus:require("../../assets/audios/死奏怜音、玲珑终.mp3"),
         }
     },
-    computed:{
-        isPush(){
-            return useRoute().path === '/home'
-        }
-    },
+
     mounted(){
-        this.$refs.MusicPlay.volume = 0.2
-        if (this.isPush()){
-            setTimeout(()=>{
-                this.muted = true
-                this.$router.push('/messageBoard')
-            },220000)
-        }
 
     },
     methods:{
