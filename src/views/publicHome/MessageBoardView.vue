@@ -6,17 +6,20 @@
                 <h4 style="margin-bottom:-1px;margin-top: 10px;">
                     {{label.two}}
                 </h4>
-                <div>
-                    {{ label.one }}
+                <div style="">
+                    <my-label font-size="8" :message="label.one"></my-label>
                 </div>
                 <div>
                     {{label.time}}
                 </div>
             </li>
         </ul>
+        <div style="position: absolute;margin-top: 55%;margin-left: 31%;" >
+            <pagination @onPageChange="onPageChange"></pagination>
+        </div>
         <div style="position:absolute;margin-top: 50%;margin-left: 22%;width: 100%;">
             <my-search @event="event" placeholder="留言框" v-model="message"></my-search>
-            <div class="search-bar" :class="{'search-bar-change-search': isChangeSearch}"  style="margin-left: 10%">
+            <div class="search-bar" :class="{'search-bar-change-search': isChangeSearch}"  style="height: 1px;margin-left: 10%">
                 <my-button height="55px" @click="submit" style="margin-left: 100%;margin-top: -49px;" message="➡"></my-button>
             </div>
         </div>
@@ -28,8 +31,10 @@ import axios, {post} from "axios";
 import MyButton from "@/components/button/MyButton.vue";
 import store from "@/store";
 import headerComponent from "@/components/HeaderComponent.vue";
+import Pagination from "@/components/Pagination/PaginationComponent.vue";
+import MyLabel from "@/components/lable/MyLabel.vue";
 export default {
-    components: {MyButton, MySearch},
+    components: {MyLabel, Pagination, MyButton, MySearch},
     data() {
         return{
             labels:[],
@@ -37,22 +42,28 @@ export default {
             msg:[],
             music:require("../../assets/audios/桜华月想.mp3"),
             isChangeSearch:false,
-            message:''
+            message:'',
+            page:1,
         }
     },
     mounted(){
-        this.msgData();
+        this.msgData(this.page);
         setTimeout(()=>{
             this.musicPlay()
         },5000)
     },
     methods: {
+        onPageChange(page){
+            this.page = page
+            this.labels = []
+            this.msgData(this.page)
+        },
         submit() {
             const data = {
-                username:store.state.username,
+                username:localStorage.getItem("username"),
                 msg:this.message,
                 tree: 0,
-                fPid: 0
+                fPid: 0,
         };
             if (this.message.length >=10){
                 axios.post("/api/submitMsg",data).then(resp=>{
@@ -61,6 +72,7 @@ export default {
             }else {
                 alert("信息不能少于10个字！")
             }
+            location.reload()
         },
         event(data){
             this.isChangeSearch = data
@@ -71,11 +83,13 @@ export default {
             this.musicTF = false
             this.show = false;
         },
-        msgData(){
-            axios.post("/api/selectMsgById").then(resp=>{
+        msgData(page){
+            const data = {
+                offset:page
+            }
+            axios.post("/api/selectMsgById",data).then(resp=>{
                 this.msg = resp.data.list;
-                for (let i = 0; i < resp.data.total; i++) {
-
+                for (let i = 0; i < 5; i++) {
                     this.addRow(i);
                 }
             })
