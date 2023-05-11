@@ -5,7 +5,7 @@
 	<div class="treasure">
 		<!--		弹出注册层-->
 		<div style="margin-left: 20%;margin-top: 50%;;font-size: 17px;position:absolute;">
-			<my-label font-size="11" message="本网页不支持手机端，如果登陆不上请用电脑连接手机热点即可登陆"></my-label>
+			<my-label font-size="11" message="本网页不支持手机端，如果登录不上请用电脑连接手机热点即可登录"></my-label>
 		</div>
 		<dialog-component style="position:absolute;margin-left: 22%;margin-top: 14%;" :hidden="visitAble" @event="event" ref="dialog"></dialog-component>
 		<div style="margin-top: 15%;font-size: 17px">

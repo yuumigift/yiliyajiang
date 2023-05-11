@@ -21,7 +21,7 @@
             <img class="profile-img" src="../assets/images/headerProfile/2.jpg" alt="">
         </div>
         <a @click="loginOut">
-            <text >退出登陆</text>
+            <text >退出登录</text>
         </a>
     </div>
 </template>
@@ -57,6 +57,7 @@ export default {
 .fff{
   font-family: ysbth;
   cursor: url("../assets/mouse/text.ico"),auto;
+  margin-bottom: 0;
 }
 
 .header {
