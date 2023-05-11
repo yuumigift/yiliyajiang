@@ -13,6 +13,8 @@
 import { reactive, ref } from "vue";
 
 const ref_page = ref();
+
+// Star模块
 const Star = reactive({
   config: {
     size: 40,
