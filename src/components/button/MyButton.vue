@@ -1,9 +1,9 @@
 <template>
     <div class="magic-card-box">
-        <div class="btn" :style="{
+        <div  class="btn" :style="{
             height:height
         }">
-            <a :href=urrl>
+            <a :class="{active:isActive}" :href=urrl>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -23,6 +23,10 @@ export default {
         }
     },
     props:{
+        isActive:{
+            default:false,
+            type:Boolean
+        },
         height:{
             type:String
         },
@@ -44,33 +48,13 @@ export default {
 $buttonBackground: #2c3e50;
 $buttonColor: rgba(255,255,255,1);
 
+
+
 .magic-card-box{
   .btn{
     display: flex;
     flex-direction: row;
       font-family: ysbth;
-    /*.sparkly {
-      background: lighten( $buttonBackground , 10% );
-      color: $buttonColor;
-      border: none;
-
-      padding: 16px 36px;
-      font-weight: normal;
-
-      border-radius: 3px;
-      transition: all 0.25s ease;
-
-      box-shadow: 0 38px 32px -23px black;
-      margin: 0 1em 1em;
-
-      &:hover {
-
-        background: $buttonBackground;
-        color: white;
-
-      }
-
-    }*/
 
     a{
       position: relative;
@@ -181,7 +165,15 @@ $buttonColor: rgba(255,255,255,1);
     a:nth-child(1){
       filter: hue-rotate(100deg);
     }
-
+    .active {
+        background: #03e9f4;
+        color: #ffffff;
+        box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 200px #03e9f4;
+        -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+  }
   }
 
 

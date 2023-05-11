@@ -1,7 +1,7 @@
 <template>
     <div class="video-bg">
         <video width="320" height="240" autoplay :hidden="hidden" :muted="muted" ref="MusicPlay">
-            <source src="http://wuwangwo.space\:8081/%E7%A7%8B%E5%A7%89%E5%A6%B9%E3%81%AE%E3%81%AA%E3%81%8F%E9%A1%B7%E3%81%AB.mp4" type="video/mp4">
+            <source src="http://localhost:8081/%E7%A7%8B%E5%A7%89%E5%A6%B9%E3%81%AE%E3%81%AA%E3%81%8F%E9%A1%B7%E3%81%AB.mp4" type="video/mp4">
         </video>
     </div>
     <div class="maind">

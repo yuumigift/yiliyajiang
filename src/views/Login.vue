@@ -62,8 +62,6 @@ export default {
 				visitAble:true
 		}
 	},
-	mounted() {
-	},
 	methods:{
 		event(data){
 			this.visitAble = data
@@ -100,6 +98,8 @@ export default {
 				}
 				store.state.username = this.username;
 				store.state.data = this.role;
+				localStorage.setItem("role",this.role)
+				localStorage.setItem("username",this.username)
 			})
 		}
 	}

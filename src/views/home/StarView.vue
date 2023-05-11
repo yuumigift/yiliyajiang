@@ -16,7 +16,7 @@
                 </video>
                 <my-button style="margin-top: 34%;margin-left: 70%;"
                            :hidden="buttonHidden"
-                           message="前往生日派对" urrl="/#/hidden/tictactoe"></my-button>
+                           message="欣赏烟火" urrl="/#/hidden/firework"></my-button>
             </div>
         </div>
     </div>

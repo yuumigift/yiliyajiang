@@ -2,15 +2,8 @@
     <div class="treasure">
         <div class="video-bg" style="width: 100%;height: 100%">
             <video width="320" height="240" autoplay muted>
-                <source src="http://wuwangwo.space:8081/%E8%BD%A6%E4%B8%87%E9%B8%A3%E6%B3%A3%E4%B9%8B%E6%97%B6.mp4" type="video/mp4">
+                <source src="http://wuwangwo.space:8081/%E5%87%BA%E5%9C%BA-%E7%94%9F%E6%97%A5%E7%83%9F%E7%81%AB.mp4" type="video/mp4">
             </video>
-        </div>
-        <audio :src="mus" class="media-audio" loop autoplay ref="MusicPlay" :muted="muted"></audio>
-        <div style="width: 66px;position: fixed;top:85%;left:80%;line-height: 0;z-index: 100;">
-            <div style="width: 190%;">
-                <my-button height="45px" style="margin-top: 49%;margin-left: 140%;width: 50%;"
-                           message="sikp" urrl="/#/messageBoard"></my-button>
-            </div>
         </div>
     </div>
 </template>
@@ -22,7 +15,6 @@ export default {
     data(){
         return{
             muted:false,
-            mus:require("../../assets/audios/死奏怜音、玲珑终.mp3")
         }
     },
     mounted(){

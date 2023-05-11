@@ -42,7 +42,7 @@ export default {
 			poem:[],
 			labels:[],
 			show:true,
-			mus:require("../../assets/audios/doriko,初音ミク - 夕日坂.mp3"),
+			mus:require("../../assets/audios/Irony,℃iel - 藍　Second Love♥ふたりの唇 .mp3"),
 		}
 	},
 	init(){

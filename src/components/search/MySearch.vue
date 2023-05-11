@@ -1,5 +1,3 @@
-
-
 <template>
     <div class="search-bar" :class="{'search-bar-change-search': isChangeSearch}" style="margin-left: 10%">
         <input :style="{

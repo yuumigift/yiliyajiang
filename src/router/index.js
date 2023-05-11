@@ -10,6 +10,7 @@ import HomeView from "@/views/publicHome/HomeView.vue";
 import MessageBoardView from "@/views/publicHome/MessageBoardView.vue";
 
 import ReportView from "@/views/300report/ReportView.vue";
+import FireworkView from "@/views/firework/FireworkView.vue";
 
 
 const routes = [
@@ -104,6 +105,14 @@ const routes = [
           requireAuth:true,
           title: '首页'
         },
+      },
+      {
+        path: '/hidden/firework',
+        name: '烟火',
+        component: FireworkView,
+        meta: {
+          title: '绚烂烟火'
+        }
       }
     ]
   },
