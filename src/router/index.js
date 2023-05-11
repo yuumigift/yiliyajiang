@@ -35,6 +35,14 @@ const routes = [
     }
   },
   {
+    path: '/star',
+    name: 'star',
+    component: import("@/views/star/StarView.vue"),
+    meta:{
+      title:'星星棒'
+    }
+  },
+  {
     path: '/public',
     name: 'public',
     children: [
