@@ -6,7 +6,9 @@
       <img v-if="star.img === 2" src="../../assets/images/star/starone.png" alt="" />
       <img v-if="star.img === 3" src="../../assets/images/star/starfour.png" alt="" />
     </div>
-    <slot></slot>
+    <div class="content">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -75,15 +77,20 @@ Star.enterFrame();
 
 <style scoped lang="scss">
 .c__star_page {
+  display: grid;
   position: relative;
-  flex: 1;
-  background: black;
   overflow: hidden;
   color: #ffc0cb;
+}
+.content{
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 .star {
   position: absolute;
   z-index: 99;
+  pointer-events: none;
   & > img {
     width: 100%;
     height: 100%;
