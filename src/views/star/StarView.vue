@@ -3,10 +3,10 @@
     <div class="star" v-for="(star, index) in Star.list" :key="index" :style="Star.getStyle(star)">
       <img v-if="star.img === 0" src="../../assets/images/star/starthree.png" alt="" />
       <img v-if="star.img === 1" src="../../assets/images/star/startwo.png" alt="" />
-        <img v-if="star.img === 1" src="../../assets/images/star/starone.png" alt="" />
-        <img v-if="star.img === 1" src="../../assets/images/star/starfour.png" alt="" />
-
+      <img v-if="star.img === 2" src="../../assets/images/star/starone.png" alt="" />
+      <img v-if="star.img === 3" src="../../assets/images/star/starfour.png" alt="" />
     </div>
+    <slot></slot>
   </div>
 </template>
 
@@ -83,6 +83,7 @@ Star.enterFrame();
 }
 .star {
   position: absolute;
+  z-index: 99;
   & > img {
     width: 100%;
     height: 100%;
