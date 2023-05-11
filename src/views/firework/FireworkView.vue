@@ -1,7 +1,7 @@
 <template>
     <div class="treasure">
         <div class="video-bg" style="width: 100%;height: 100%">
-            <video width="320" height="240" autoplay muted>
+            <video width="320" height="240" autoplay>
                 <source src="http://wuwangwo.space:8081/%E5%87%BA%E5%9C%BA-%E7%94%9F%E6%97%A5%E7%83%9F%E7%81%AB.mp4" type="video/mp4">
             </video>
         </div>

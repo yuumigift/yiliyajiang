@@ -1,5 +1,5 @@
 <template>
-	
+
 <div class="video-bg">
 	<video width="320" height="240" autoplay loop muted>
 		<source src="./assets/background-image.mp4" type="video/mp4">
