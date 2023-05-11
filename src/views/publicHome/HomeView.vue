@@ -16,21 +16,30 @@
 </template>
 <script>
 import MyButton from "@/components/button/MyButton.vue";
+import {useRoute} from "vue-router"
 
 export default {
     components: {MyButton},
     data(){
         return{
             muted:false,
-            mus:require("../../assets/audios/死奏怜音、玲珑终.mp3")
+            mus:require("../../assets/audios/死奏怜音、玲珑终.mp3"),
+        }
+    },
+    computed:{
+        isPush(){
+            return useRoute().path === '/home'
         }
     },
     mounted(){
         this.$refs.MusicPlay.volume = 0.2
-        setTimeout(()=>{
-            this.muted = true
-            this.$router.push('/messageBoard')
-        },220000)
+        if (this.isPush()){
+            setTimeout(()=>{
+                this.muted = true
+                this.$router.push('/messageBoard')
+            },220000)
+        }
+
     },
     methods:{
 

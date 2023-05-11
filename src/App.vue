@@ -1,34 +1,38 @@
 <template>
 
-<div class="video-bg">
-	<video width="320" height="240" autoplay loop muted>
-		<source src="./assets/background-image.mp4" type="video/mp4">
-		Your browser does not support the video tag.
-	</video>
-</div>
+<div style="display:flex;width: 2000px;margin-left: 19%;">
+	<div class="video-bg">
+		<video width="320" height="240" autoplay loop muted>
+			<source src="./assets/background-image.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+	</div>
 
-<div class="main">
-	<!--顶部导航栏菜单-->
-	<header-component></header-component>
-	
-	<div class="wrapper">
-		<!--左边导航栏菜单-->
-		<left-component></left-component>
-		<!-- 内容区域 -->
-		<router-view></router-view>
+	<div class="main">
+		<!--顶部导航栏菜单-->
+		<header-component></header-component>
+
+		<div class="wrapper">
+			<!--左边导航栏菜单-->
+			<left-component></left-component>
+			<!-- 内容区域 -->
+			<router-view></router-view>
+		</div>
 	</div>
 </div>
-	
+
+
 </template>
 
 <script >
 
 import HeaderComponent from "@/components/HeaderComponent";
 import LeftComponent from "@/components/LeftComponent";
+import MouseStarFollow from "@/views/star/StarView.vue";
 
 export default {
 	name: "App",
-	components:{HeaderComponent, LeftComponent},
+	components:{MouseStarFollow, HeaderComponent, LeftComponent},
 	data(){
 		return {
 

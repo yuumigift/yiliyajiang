@@ -33,14 +33,11 @@ export default {
     data(){
         return{
 			      isChangeSearch:false,
-            hidden:false,
         }
     },
-    computed(){
-        if (useRoute().path === "/"){
-            this.hidden = true
-        }else {
-            this.hidden = false
+    computed:{
+        hidden(){
+            return useRoute().path === '/login' || useRoute().path.includes('/hidden');
         }
     },
 	methods:{
@@ -51,7 +48,6 @@ export default {
       },
 		changeStyle(){
 			this.isChangeSearch = !this.isChangeSearch
-			console.log('聚焦')
 		}
 	}
 }
