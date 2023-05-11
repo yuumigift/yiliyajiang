@@ -10,7 +10,7 @@
         </div>
         <!-- 主菜单 -->
         <div class="header-menu" :class="{'header-menu-change-search':isChangeSearch}" :hidden="hidden">
-            <router-link  active-class="active" to="/300report">（未完成）</router-link>
+            <router-link  active-class="active" to="/300report">300战绩查询</router-link>
         </div>
 <!--         搜索框
 		<div class="search-bar" :class="{'search-bar-change-search': isChangeSearch}" style="margin-left: 10%">
@@ -33,24 +33,21 @@ export default {
     data(){
         return{
 			      isChangeSearch:false,
-            hidden:false,
         }
     },
-    computed(){
-        if (useRoute().path === "/"){
-            this.hidden = true
-        }else {
-            this.hidden = false
+    computed:{
+        hidden(){
+            return useRoute().path === '/login';
         }
     },
 	methods:{
       loginOut(){
           store.state.data = '';
+          localStorage.setItem("role",'')
           this.$router.push('/login')
       },
 		changeStyle(){
 			this.isChangeSearch = !this.isChangeSearch
-			console.log('聚焦')
 		}
 	}
 }

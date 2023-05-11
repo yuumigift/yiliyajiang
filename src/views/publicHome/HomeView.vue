@@ -2,7 +2,7 @@
     <div class="treasure">
         <div class="video-bg" style="width: 100%;height: 100%">
             <video width="320" height="240" autoplay muted>
-                <source src="../../assets/mp4/车万鸣泣之时.mp4" type="video/mp4">
+                <source src="http://wuwangwo.space:8081/%E8%BD%A6%E4%B8%87%E9%B8%A3%E6%B3%A3%E4%B9%8B%E6%97%B6.mp4" type="video/mp4">
             </video>
         </div>
         <audio :src="mus" class="media-audio" loop autoplay ref="MusicPlay" :muted="muted"></audio>
