@@ -25,7 +25,6 @@ const Star = reactive({
     gravity: 8,
   },
   list: [],
-
   getStyle(item) {
     return {
       width: `${item.size}px`,
@@ -88,6 +87,7 @@ Star.enterFrame();
   justify-items: center;
 }
 .star {
+  pointer-events: none;
   position: absolute;
   z-index: 99;
   pointer-events: none;

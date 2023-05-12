@@ -11,6 +11,7 @@ import MessageBoardView from "@/views/publicHome/MessageBoardView.vue";
 
 import ReportView from "@/views/300report/ReportView.vue";
 import FireworkView from "@/views/firework/FireworkView.vue";
+import CakeView from "@/views/home/CakeView.vue";
 
 
 const routes = [
@@ -120,6 +121,14 @@ const routes = [
         component: FireworkView,
         meta: {
           title: '绚烂烟火'
+        }
+      },
+      {
+        path: '/hidden/cake',
+        name:'生日蛋糕',
+        component: CakeView,
+        meta: {
+          title: '生日蛋糕'
         }
       }
     ]
