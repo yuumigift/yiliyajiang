@@ -1,6 +1,6 @@
 <template>
   <MouseStarFollow>
-    <div style="display: flex; width: 1300px; margin: auto">
+    <div class="main_container">
       <div class="video-bg">
         <video width="320" height="240" autoplay loop muted>
           <source src="./assets/background-image.mp4" type="video/mp4" />
@@ -94,5 +94,23 @@ video {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background: -webkit-linear-gradient(top, #f16de4 0%, rgba(83, 237, 142, 0) 100%);
+}
+
+.main_container {
+  display: grid;
+  width: 1300px;
+  margin: auto;
+}
+@media screen and (max-width: 1300px) {
+  .main_container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+  }
+  .main {
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
 }
 </style>
