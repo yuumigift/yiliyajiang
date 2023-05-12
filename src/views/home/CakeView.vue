@@ -1,10 +1,11 @@
 <template>
-<div>
-    a
-</div>
+    <add-text></add-text>
 </template>
 <script>
+import AddText from "@/components/AddText.vue";
+
 export default {
+    components: {AddText}
 
 }
 </script>

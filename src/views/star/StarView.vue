@@ -74,7 +74,7 @@ const handleMouseMove = (e) => {
     timer_add_star = setTimeout(() => {
       clearTimeout(timer_add_star);
       can_add_star = true;
-    }, 50);
+    }, 25);
     const rect = ref_page.value.getBoundingClientRect();
     Star.addStar(e.clientX - rect.left, e.clientY - rect.top);
   }
