@@ -84,9 +84,9 @@ export default {
         flex-direction: row;
         align-items: center;
 
-        @media screen and (max-width: 945px) {
-            display: none;
-        }
+        // @media screen and (max-width: 945px) {
+        //     display: none;
+        // }
 
         h2{
             background-image: linear-gradient(#dc81f1, #db6ff3);
