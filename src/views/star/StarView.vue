@@ -66,9 +66,18 @@ const Star = reactive({
   },
 });
 
+let can_add_star = true;
+let timer_add_star = 0;
 const handleMouseMove = (e) => {
-  const rect = ref_page.value.getBoundingClientRect();
-  Star.addStar(e.clientX - rect.left, e.clientY - rect.top);
+  if (can_add_star) {
+    can_add_star = false;
+    timer_add_star = setTimeout(() => {
+      clearTimeout(timer_add_star);
+      can_add_star = true;
+    }, 50);
+    const rect = ref_page.value.getBoundingClientRect();
+    Star.addStar(e.clientX - rect.left, e.clientY - rect.top);
+  }
 };
 
 Star.enterFrame();
@@ -81,7 +90,7 @@ Star.enterFrame();
   overflow: hidden;
   color: #ffc0cb;
 }
-.content{
+.content {
   display: grid;
   align-items: center;
   justify-items: center;
