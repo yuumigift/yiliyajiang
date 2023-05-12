@@ -1,6 +1,6 @@
 <template>
   <MouseStarFollow>
-    <div style="display: flex; width: 2000px; margin-left: 19%">
+    <div style="display: flex; width: 1300px; margin: auto">
       <div class="video-bg">
         <video width="320" height="240" autoplay loop muted>
           <source src="./assets/background-image.mp4" type="video/mp4" />
@@ -41,12 +41,9 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 #app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  /*background-color: red;*/
+  display: grid;
+  width: 100vw;
+  height: 100vh;
 }
 
 /*背景视频*/
