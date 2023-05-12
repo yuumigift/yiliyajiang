@@ -1,11 +1,20 @@
 <template>
-    <add-text></add-text>
+    <add-text :arr="arr"></add-text>
 </template>
 <script>
 import AddText from "@/components/AddText.vue";
 
 export default {
-    components: {AddText}
+    components: {AddText},
+    data(){
+        return{
+            arr:[
+            ]
+        }
+    },
+    mounted() {
+
+    }
 
 }
 </script>

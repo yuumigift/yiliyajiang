@@ -89,7 +89,8 @@ export default {
 					if (resp.data.role === 0){
 						this.$router.replace('/hidden/Login')
 						store.state.message.m1 = resp.data.m1;
-						store.state.message.poem = resp.data.poem;
+						localStorage.setItem("poem",resp.data.poem)
+						console.log(localStorage.getItem("poem"))
 					}else {
 						this.$router.replace('/home')
 					}

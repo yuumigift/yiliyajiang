@@ -1,4 +1,5 @@
 <template>
+	<add-text style="position:absolute;" :arr="poem"></add-text>
 	<div class="mainn" @click="musicPlay">
 		<div style="display: flex;margin-left: 37%">
 			<my-label
@@ -6,7 +7,7 @@
 			<audio :src="mus" class="media-audio" loop autoplay ref="MusicPlay"></audio>
 		</div>
 
-		<div style="margin-left: 88%;margin-top: 50%" class="point" >
+		<div style="margin-left: 88%;margin-top: 50%">
 			<my-button
 					@click="push"
 					:style="{
@@ -15,24 +16,18 @@
 					style="background-color: white;opacity: 0.8"
 					:message=newMsg></my-button>
 		</div>
-		<div style="margin-left: 40%;margin-top: -58%;font-family: ysbth;width: 18%">
-			<ul style="list-style: none;color: hotpink">
-				<li v-for="(label, index) in labels" class="text">
-					{{ label.one }}
-				</li>
-			</ul>
-		</div>
 	</div>
+
 </template>
 
 <script>
 import MyButton from "@/components/button/MyButton.vue";
 import {sakura} from "../../assets/js/sakura";
 import MyLabel from "@/components/lable/MyLabel.vue";
-import store from "@/store";
+import AddText from "@/components/AddText.vue";
 export default {
 	name: "TictactoeView",
-	components: {MyLabel, MyButton},
+	components: {AddText, MyLabel, MyButton},
 	data(){
 		return{
 			newMsg:'派对正在准备中，请稍候...',
@@ -40,7 +35,6 @@ export default {
 			x:0,
 			none:'none',
 			poem:[],
-			labels:[],
 			show:true,
 			mus:require("../../assets/audios/Irony,℃iel - 藍　Second Love♥ふたりの唇 .mp3"),
 		}
@@ -48,7 +42,8 @@ export default {
 	init(){
 	},
 	mounted() {
-		this.poem = store.state.message.poem
+		this.poem = localStorage.getItem("poem")
+		console.log(localStorage.getItem("poem"))
 		this.$refs.MusicPlay.volume = 0.15
 		setTimeout(()=> {
 			setInterval(()=>{
@@ -61,28 +56,11 @@ export default {
 					this.none = ''
 				}
 			},1000)
-			setInterval(()=>{
-				this.addRow();
-			},1900)
 		},60000);
-
 	},
 	methods:{
 		push(){
 			this.$router.push('/hidden/happyBirthday')
-		},
-		addRow(){
-			this.labels.push({
-				one:this.poem[this.x],
-			})
-			this.x++;
-		},
-		/**
-		 * 暂停音乐并停止旋转
-		 */
-		musicPause() {
-			this.$refs.MusicPlay.pause();
-			this.musicTF = true;
 		},
 
 		/**
@@ -90,7 +68,6 @@ export default {
 		 */
 		musicPlay() {
 			this.$refs.MusicPlay.play();
-			this.musicTF = false
 			this.show = false;
 		},
 	}
@@ -106,7 +83,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	position: relative;
+	position: absolute;
 	width: 100%;
 	border-radius: 14px;
 	backdrop-filter: blur(20px);
@@ -116,6 +93,5 @@ export default {
 	background-image: url("../../assets/images/sakuraTree01.jpeg");
 	background-size: 100%;
 }
-.point{
-}
+
 </style>

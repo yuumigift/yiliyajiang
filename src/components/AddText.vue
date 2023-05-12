@@ -1,22 +1,34 @@
 <template>
-    <div class="sticky">
-        <h1>Less bezel, more screen.</h1>
+    <div class="sticky" style="margin-left: 45%;width: 130px;">
+        <p v-for="(item, index) in arr" :key="index">
+            {{ item }}
+        </p>
     </div>
 </template>
 <script>
 export default {
+    props:{
+        arr:{
+            type:[]
+        }
+    },
     mounted() {
-        const h1 = document.querySelector('h1')
+        const h1s = document.querySelectorAll('p');
+        let delay = 2000;
+        h1s.forEach((h1) => {
+            h1.style.setProperty('--percentage', `${0}%`);
 
-        let scrolled = 0;
-        setInterval(()=>{
-            if (scrolled !== 10){
-                scrolled++
-            }
-            h1.style.setProperty('--percentage', `${scrolled * 10}%`)
-
-        },100)
-
+            setTimeout(() => {
+                let scrolled = 0;
+                setInterval(() => {
+                    if (scrolled !== 10) {
+                        scrolled++
+                    }
+                    h1.style.setProperty('--percentage', `${scrolled * 10}%`);
+                }, 200);
+            }, delay);
+            delay += 2000;
+        });
     }
 }
 </script>
@@ -34,17 +46,16 @@ body {
 .sticky {
   position: sticky;
   top: 0;
-  height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-h1 {
+p {
+  display: inline-block; /* 或者 display: inline; */
+    margin: 0 5px;
   font-family: ysbth;
-  margin: 0;
-  padding: 0;
-  font-size: 48px;
+  font-size: 10px;
+  width: 150px;
   letter-spacing: -0.3px;
   background-image: linear-gradient(75deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 33.33%, rgba(255, 255, 255, 0) 66.67%, rgba(255, 255, 255, 0) 100%);
   background-size: 300% 100%;
