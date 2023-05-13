@@ -1,13 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 import app from "@/App.vue";
-import '@/assets/font/font.css'
-import '@/assets/css/mouse.css'
+import "@/assets/font/font.css";
+import "@/assets/css/mouse.css";
 import axios from "axios";
-import store from './store';
-import Antd from 'ant-design-vue';
-import antdcss from 'antd/dist/reset.css'
+// import store from './store';
+// import Antd from 'ant-design-vue';
+// import  'antd/dist/reset.css'
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 router.beforeEach((to, from, next) => {
     document.title = `${to.meta.title}`;
@@ -30,8 +30,7 @@ router.beforeEach((to, from, next) => {
     }
 })
 
-createApp(App).use(router,store,Antd).mount('#app')
+createApp(App).use(router).mount("#app");
 // app.config.globalProperties.initAudio = initAudio    // main.ts/js 文件中
 
-
-app.config.globalProperties.$http=axios
+// app.config.globalProperties.$http=axios

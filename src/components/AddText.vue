@@ -1,48 +1,46 @@
 <template>
-    <div class="sticky" style="margin-left: 45%;width: 130px;">
-        <p v-for="(item, index) in arr" :key="index">
-            {{ item }}
-        </p>
-    </div>
+  <div class="sticky" style="margin-left: 45%; width: 130px">
+    <p v-for="(item, index) in poem" :key="index" :style="getStyle(item)">
+      {{ item.text }}
+    </p>
+  </div>
 </template>
-<script>
-export default {
-    props:{
-        arr:{
-            type:Array
-        }
-    },
-    mounted() {
-        const h1s = document.querySelectorAll('p');
-        let delay = 2000;
-        h1s.forEach((h1) => {
-            h1.style.setProperty('--percentage', `${0}%`);
+<script setup>
+import { ref, watchEffect } from "vue";
+const props = defineProps({
+  arr: {
+    default: [],
+  },
+});
 
-            setTimeout(() => {
-                let scrolled = 0;
-                setInterval(() => {
-                    if (scrolled !== 10) {
-                        scrolled++
-                    }
-                    h1.style.setProperty('--percentage', `${scrolled * 10}%`);
-                }, 200);
-            }, delay);
-            delay += 2000;
-        });
-    }
-}
+const INTERVAL = 10; //每一行显示间隔
+const SPEED = 0.5; //显示速度
+const poem = ref([]);
+
+const getStyle = (item) => {
+  let percentage = 0;
+  if (item.percentage > 0) {
+    percentage = item.percentage;
+  }
+  if (item.percentage > 100) {
+    percentage = 100;
+  }
+  return { "--percentage": `${percentage}%` };
+};
+
+const enterFrame = () => {
+  poem.value.forEach((item) => {
+    item.percentage += SPEED;
+  });
+  requestAnimationFrame(enterFrame);
+};
+enterFrame();
+
+watchEffect(() => {
+  poem.value = props.arr.map((text, index) => ({ text, percentage: index * -INTERVAL }));
+});
 </script>
 <style scoped lang="scss">
-:root {
-  --percentage: 0%;
-}
-
-body {
-  background-color: #000;
-  margin: 0;
-  height: 300vh;
-}
-
 .sticky {
   position: sticky;
   top: 0;
@@ -51,8 +49,9 @@ body {
 }
 
 p {
+  --percentage: 0%;
   display: inline-block; /* 或者 display: inline; */
-    margin: 0 5px;
+  margin: 0 5px;
   font-family: ysbth;
   font-size: 10px;
   width: 150px;
