@@ -13,7 +13,7 @@ export default {
         }
     },
     mounted() {
-
+        // this.arr = localStorage.getItem("poem")
     }
 
 }
