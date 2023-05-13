@@ -13,8 +13,8 @@ const props = defineProps({
   },
 });
 
-const INTERVAL = 10; //每一行显示间隔
-const SPEED = 0.5; //显示速度
+const INTERVAL = 50; //每一行显示间隔
+const SPEED = 0.1; //显示速度
 const poem = ref([]);
 
 const getStyle = (item) => {
@@ -55,8 +55,9 @@ p {
   font-family: ysbth;
   font-size: 10px;
   width: 150px;
+
   letter-spacing: -0.3px;
-  background-image: linear-gradient(75deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 33.33%, rgba(255, 255, 255, 0) 66.67%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(75deg, rgba(255, 192, 203, 1) 0%, rgba(255, 192, 203, 1) 33.33%, rgba(255, 192, 203, 0) 66.67%, rgba(255, 192, 203, 0) 100%);
   background-size: 300% 100%;
   background-position-x: calc(100% - var(--percentage));
   background-clip: text;
