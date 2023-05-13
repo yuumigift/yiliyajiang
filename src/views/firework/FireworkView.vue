@@ -5,6 +5,12 @@
                 <source src="http://wuwangwo.space:8081/%E5%87%BA%E5%9C%BA-%E7%94%9F%E6%97%A5%E7%83%9F%E7%81%AB.mp4" type="video/mp4">
             </video>
         </div>
+        <div style="width: 66px;position: fixed;top:85%;left:80%;line-height: 0;z-index: 100;">
+            <div style="width: 190%;">
+                <my-button height="45px" style="margin-top: 49%;margin-left: 120%;width: 100%;"
+                           message="前往下一站" urrl="/#/hidden/tictactoe"></my-button>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -21,7 +27,7 @@ export default {
         this.$refs.MusicPlay.volume = 0.2
         setTimeout(()=>{
             this.muted = true
-            this.$router.push('/messageBoard')
+            this.$router.push('/hidden/tictactoe')
         },220000)
     },
     methods:{

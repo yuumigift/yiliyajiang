@@ -1,7 +1,7 @@
 <template>
     <div class="treasure">
         <div class="video-bg" style="width: 100%;height: 100%">
-            <video width="320" height="240" autoplay muted>
+            <video width="320" height="240" autoplay :muted="muted">
                 <source :src="src" type="video/mp4">
             </video>
         </div>
@@ -29,13 +29,20 @@ export default {
     },
 
     mounted(){
-        console.log(Math.random())
-        this.mus = require("../../assets/audios/死奏怜音、玲珑终.mp3")
+        this.choose()
     },
     methods:{
         choose(){
-            this.src = "http://localhost:8081/%E3%80%90%E5%A5%B3%E7%8E%8B%E8%9C%82_%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86%E3%80%91.mp4"
-            this.src = "http://wuwangwo.space:8081/%E8%BD%A6%E4%B8%87%E9%B8%A3%E6%B3%A3%E4%B9%8B%E6%97%B6.mp4"
+            const  randomNum = Math.floor(Math.random() *1000)
+            if (randomNum % 2 === 0){
+                this.src = "http://wuwangwo.space:8081/%E3%80%90%E5%A5%B3%E7%8E%8B%E8%9C%82_%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86%E3%80%91.mp4"
+                this.muted = true;
+            }else {
+                this.src = "http://wuwangwo.space:8081/%E8%BD%A6%E4%B8%87%E9%B8%A3%E6%B3%A3%E4%B9%8B%E6%97%B6.mp4"
+                this.mus = require("../../assets/audios/死奏怜音、玲珑终.mp3")
+
+
+            }
         }
     }
 

@@ -34,4 +34,3 @@ createApp(App).use(router,store,Antd).mount('#app')
 // app.config.globalProperties.initAudio = initAudio    // main.ts/js 文件中
 
 
-app.config.globalProperties.$http=axios
