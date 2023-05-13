@@ -24,6 +24,9 @@ router.beforeEach((to, from, next) => {
             if (role !== '0'){
                 next('/login')
             }
+            else {
+
+            }
         }
         next();
 

@@ -43,7 +43,7 @@ export default {
 	init(){
 	},
 	mounted() {
-		const arr = localStorage.getItem("poem").split(',')
+		const arr = localStorage.getItem("poem")?.split(',')
 		this.poem = arr
 		this.$refs.MusicPlay.volume = 0.15
 		setTimeout(()=> {

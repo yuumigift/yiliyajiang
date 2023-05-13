@@ -7,7 +7,7 @@
         </div>
         <div style="width: 66px;position: fixed;top:85%;left:80%;line-height: 0;z-index: 100;">
             <div style="width: 190%;">
-                <my-button height="45px" style="margin-top: 49%;margin-left: 120%;width: 100%;"
+                <my-button height="45px" style="margin-top: 49%;margin-left: 140%;width: 50%;"
                            message="前往下一站" urrl="/#/hidden/tictactoe"></my-button>
             </div>
         </div>
@@ -24,11 +24,6 @@ export default {
         }
     },
     mounted(){
-        this.$refs.MusicPlay.volume = 0.2
-        setTimeout(()=>{
-            this.muted = true
-            this.$router.push('/hidden/tictactoe')
-        },220000)
     },
     methods:{
 
