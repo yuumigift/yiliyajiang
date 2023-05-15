@@ -13,7 +13,7 @@
       </div>
       <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` }">
         <div class="stars--inner">
-          <video width="160" height="120" autoplay controls>
+          <video autoplay controls>
             <source src="../../assets/mp4/星星_1.mp4" type="video/mp4" />
           </video>
         </div>
@@ -115,7 +115,6 @@ video {
 
   &--inner {
     position: absolute;
-    left: 20px;
   }
 }
 </style>
