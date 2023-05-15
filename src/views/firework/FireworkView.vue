@@ -7,8 +7,8 @@
         </div>
         <div style="width: 66px;position: fixed;top:85%;left:80%;line-height: 0;z-index: 100;">
             <div style="width: 190%;">
-                <my-button height="45px" style="margin-top: 49%;margin-left: 140%;width: 50%;"
-                           message="前往下一站" urrl="/#/hidden/tictactoe"></my-button>
+                <my-button height="45px" style="margin-top: 49%;margin-left: 110%;width: 130%;"
+                           message="前往下一站" urrl="/#/hidden/cake"></my-button>
             </div>
         </div>
     </div>
