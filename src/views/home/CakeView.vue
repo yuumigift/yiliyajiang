@@ -1,70 +1,120 @@
 <template>
-    <div class="mainn">
-        <div class="cake" style="position:absolute;margin-top: 27%;margin-left: 35%;" >
-            <audio :src="mus" class="media-audio" loop autoplay ref="MusicPlay"></audio>
-        </div>
-        <div class="container" v-for="(item,index) in arr" :key="index"
-             :style="{ left: 260 * index + 'px' }">
-            <video width="160" height="120" autoplay loop>
-                <source src="../../assets/mp4/星星_1.mp4" type="video/mp4">
-            </video>
-        </div>
+  <div class="c__cake_view">
+    <audio :src="mus" class="media-audio" loop autoplay ref="MusicPlay"></audio>
+    <div class="desk">
+      <img src="../../assets/images/桌布.jpg" alt="" />
     </div>
+    <div class="cake">
+      <img src="../../assets/images/生日蛋糕.png" alt="" />
+    </div>
+    <div class="star_container">
+      <div class="line" v-for="(item, index) in stars">
+        <!-- 吊线放这里 -->
+      </div>
+      <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` }">
+        <div class="stars--inner">
+          <video autoplay controls>
+            <source src="../../assets/mp4/星星_1.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 import AddText from "@/components/AddText.vue";
 
 export default {
-    components: {AddText},
-    data(){
-        return{
-            mus:require('../../assets/audios/泠鸢yousa - 勾指起誓.mp3'),
-            arr:[1,2,3,4]
-        }
+  components: { AddText },
+  data() {
+    return {
+      RANGE: 30, // 星星摇晃幅度
+      mus: require("../../assets/audios/泠鸢yousa - 勾指起誓.mp3"),
+      stars: [
+        // speed：星星摇晃频率
+        { x: 0, speed: 1.3, angle: 1 },
+        { x: 0, speed: 1.6, angle: 2 },
+        { x: 0, speed: 1.5, angle: 3 },
+        { x: 0, speed: 1.7, angle: 4 },
+      ],
+    };
+  },
+  mounted() {
+    this.$refs.MusicPlay.volume = 0.15;
+    this.enterFrame();
+  },
+  methods: {
+    musicPlay() {
+      this.$refs.MusicPlay.play();
     },
-    mounted() {
-        this.$refs.MusicPlay.volume = 0.15
+    move(item) {
+      let { x, speed, angle } = item;
+      angle += speed * 0.01;
+      if (angle > Math.PI * 2) {
+        angle -= Math.PI * 2;
+      }
+      x = Math.sin(angle) * this.RANGE;
+      return { x, speed, angle };
     },
-    methods:{
-        musicPlay() {
-            this.$refs.MusicPlay.play();
-        },
-    }
-
-}
+    enterFrame() {
+      requestAnimationFrame(this.enterFrame);
+      this.stars = this.stars.map((item) => {
+        return this.move(item);
+      });
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
-.mainn{
-    max-width: 1250px;
-    max-height: 860px;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    border-radius: 14px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    font-size: 15px;
-    font-weight: 500;
-    background-size: 100%;
-    background-image: url("../../assets/images/桌布.jpg");
-}
-
-.cake{
-    background-repeat: no-repeat;
-    height: 90vh;
-
-    width: 40%;
-    background-size: 100%;
-    background-image: url("../../assets/images/生日蛋糕.png");
-}
 video {
-    mix-blend-mode: screen;
+  mix-blend-mode: screen;
 }
-.container {
+.c__cake_view {
+  flex: 1;
+  display: grid;
+  overflow: hidden;
+}
+.desk {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.cake {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  width: 500px;
+  transform: translateY(50px);
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.star_container {
+  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px auto 1fr;
+}
+.stars {
+  position: relative;
+
+  &--inner {
     position: absolute;
-    margin-left: 1%;
+  }
 }
 </style>
