@@ -7,14 +7,17 @@
         <div class="cake">
             <img src="../../assets/images/生日蛋糕.png" alt="" />
         </div>
-        <div class="star_container">
+        <div class="star_container" style="top: -90px">
             <div class="line" v-for="(item, index) in stars">
                 <!-- 吊线放这里 -->
             </div>
-            <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` }">
+            <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` , top: `${item.y}px`}">
                 <div class="stars--inner">
-                    <video autoplay muted @ended="handleEnded(item)">
+                    <video autoplay muted :hidden="hidden">
                         <source src="../../assets/mp4/星星（生成）.mp4" type="video/mp4" />
+                    </video>
+                    <video autoplay muted loop :hidden="!hidden" @ended="handleEnded(item)">
+                        <source src="../../assets/mp4/星星（完整）.mp4" type="video/mp4" />
                     </video>
                 </div>
             </div>
@@ -31,20 +34,24 @@ export default {
         return {
             RANGE: 30, // 星星摇晃幅度
             mus: require("../../assets/audios/泠鸢yousa - 勾指起誓.mp3"),
+            hidden:false,
             stars: [
                 // speed：星星摇晃频率
-                { x: 0, speed: 1.3, shaking: false, angle: Math.PI },
-                { x: 0, speed: 1.6, shaking: false, angle: Math.PI },
-                { x: 0, speed: 1.4, shaking: false, angle: Math.PI },
-                { x: 0, speed: 1.5, shaking: false, angle: 0 },
-                { x: 0, speed: 1.7, shaking: false, angle: 0 },
-                { x: 0, speed: 1.3, shaking: false, angle: 0 },
+                { y:50,x: 0, speed: 1.3, shaking: false, angle: Math.PI },
+                { y:80,x: 0, speed: 1.6, shaking: false, angle: Math.PI },
+                { y:0,x: 0, speed: 1.4, shaking: false, angle: Math.PI },
+                { y:50,x: 0, speed: 1.5, shaking: false, angle: 0 },
+                { y:0,x: 0, speed: 1.7, shaking: false, angle: 0 },
+                { y:160,x: 0, speed: 1.3, shaking: false, angle: 0 },
             ],
         };
     },
     mounted() {
         this.$refs.MusicPlay.volume = 0.15;
         this.enterFrame();
+        setTimeout(()=>{
+            this.hidden = true
+        },24500)
     },
     methods: {
         handleEnded(item) {
@@ -55,7 +62,7 @@ export default {
         },
         move(item) {
             let { x, speed, angle, shaking } = item;
-            if (item.shaking) {
+            if (this.hidden) {
                 angle += speed * 0.01;
             }
             if (angle > Math.PI * 2) {
