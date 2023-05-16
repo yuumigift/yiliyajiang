@@ -13,7 +13,7 @@
       </div>
       <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` }">
         <div class="stars--inner">
-          <video autoplay controls>
+          <video autoplay muted>
             <source src="../../assets/mp4/星星_1.mp4" type="video/mp4" />
           </video>
         </div>
@@ -32,10 +32,10 @@ export default {
       mus: require("../../assets/audios/泠鸢yousa - 勾指起誓.mp3"),
       stars: [
         // speed：星星摇晃频率
-        { x: 0, speed: 1.3, angle: 1 },
-        { x: 0, speed: 1.6, angle: 2 },
-        { x: 0, speed: 1.5, angle: 3 },
-        { x: 0, speed: 1.7, angle: 4 },
+        { x: 0, speed: 1.3, angle: 0 },
+        { x: 0, speed: 1.6, angle: 0 },
+        { x: 0, speed: 1.5, angle: 0 },
+        { x: 0, speed: 1.7, angle: 0 },
       ],
     };
   },
