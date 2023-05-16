@@ -13,7 +13,7 @@
       </div>
       <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` }">
         <div class="stars--inner">
-          <video autoplay muted>
+          <video autoplay muted @ended="handleEnded(item)">
             <source src="../../assets/mp4/星星_1.mp4" type="video/mp4" />
           </video>
         </div>
@@ -32,10 +32,10 @@ export default {
       mus: require("../../assets/audios/泠鸢yousa - 勾指起誓.mp3"),
       stars: [
         // speed：星星摇晃频率
-        { x: 0, speed: 1.3, angle: 0 },
-        { x: 0, speed: 1.6, angle: 0 },
-        { x: 0, speed: 1.5, angle: 0 },
-        { x: 0, speed: 1.7, angle: 0 },
+        { x: 0, speed: 1.3, angle: Math.PI, is_play: false },
+        { x: 0, speed: 1.6, angle: Math.PI, is_play: false },
+        { x: 0, speed: 1.5, angle: 0, is_play: false },
+        { x: 0, speed: 1.7, angle: 0, is_play: false },
       ],
     };
   },
@@ -44,17 +44,22 @@ export default {
     this.enterFrame();
   },
   methods: {
+    handleEnded(item) {
+      item.is_play = true;
+    },
     musicPlay() {
       this.$refs.MusicPlay.play();
     },
     move(item) {
-      let { x, speed, angle } = item;
-      angle += speed * 0.01;
+      let { x, speed, angle, is_play } = item;
+      if (item.is_play) {
+        angle += speed * 0.01;
+      }
       if (angle > Math.PI * 2) {
         angle -= Math.PI * 2;
       }
-      x = Math.sin(angle) * this.RANGE;
-      return { x, speed, angle };
+      x = Math.cos(angle) * this.RANGE;
+      return { x, speed, angle, is_play };
     },
     enterFrame() {
       requestAnimationFrame(this.enterFrame);
