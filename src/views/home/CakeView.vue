@@ -13,12 +13,13 @@
       </div>
       <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` }">
         <div class="stars--inner">
-          <video autoplay controls>
+          <video autoplay muted @ended="handleEnded(item)">
             <source src="../../assets/mp4/星星_1.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
     </div>
+    <div class="mask"></div>
   </div>
 </template>
 <script>
@@ -32,10 +33,12 @@ export default {
       mus: require("../../assets/audios/泠鸢yousa - 勾指起誓.mp3"),
       stars: [
         // speed：星星摇晃频率
-        { x: 0, speed: 1.3, angle: 1 },
-        { x: 0, speed: 1.6, angle: 2 },
-        { x: 0, speed: 1.5, angle: 3 },
-        { x: 0, speed: 1.7, angle: 4 },
+        { x: 0, speed: 1.3, shaking: false, angle: Math.PI },
+        { x: 0, speed: 1.6, shaking: false, angle: Math.PI },
+        { x: 0, speed: 1.4, shaking: false, angle: Math.PI },
+        { x: 0, speed: 1.5, shaking: false, angle: 0 },
+        { x: 0, speed: 1.7, shaking: false, angle: 0 },
+        { x: 0, speed: 1.3, shaking: false, angle: 0 },
       ],
     };
   },
@@ -44,17 +47,22 @@ export default {
     this.enterFrame();
   },
   methods: {
+    handleEnded(item) {
+      item.shaking = true;
+    },
     musicPlay() {
       this.$refs.MusicPlay.play();
     },
     move(item) {
-      let { x, speed, angle } = item;
-      angle += speed * 0.01;
+      let { x, speed, angle, shaking } = item;
+      if (item.shaking) {
+        angle += speed * 0.01;
+      }
       if (angle > Math.PI * 2) {
         angle -= Math.PI * 2;
       }
-      x = Math.sin(angle) * this.RANGE;
-      return { x, speed, angle };
+      x = Math.cos(angle) * this.RANGE;
+      return { x, speed, angle, shaking };
     },
     enterFrame() {
       requestAnimationFrame(this.enterFrame);
@@ -94,7 +102,7 @@ video {
   align-self: center;
   justify-self: center;
   width: 500px;
-  transform: translateY(50px);
+  transform: translateY(70px);
 
   & > img {
     width: 100%;
@@ -102,13 +110,28 @@ video {
     object-fit: cover;
   }
 }
+.mask {
+  grid-row: 1;
+  grid-column: 1;
+  background: #000;
+  animation: appear 10s both;
+  pointer-events: none;
+}
+@keyframes appear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .star_container {
   position: relative;
   grid-row: 1;
   grid-column: 1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100px auto 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 90px auto 1fr;
 }
 .stars {
   position: relative;
