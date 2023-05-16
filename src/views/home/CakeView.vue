@@ -8,8 +8,7 @@
             <img src="../../assets/images/生日蛋糕.png" alt="" />
         </div>
         <div class="star_container" style="top: -90px">
-            <div class="line" v-for="(item, index) in stars">
-                <!-- 吊线放这里 -->
+            <div class="line" v-for="(item, index) in stars" style="" :key="index" :style="{ left: `${item.x}px` , top: `${item.y}px`}">
             </div>
             <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px` , top: `${item.y}px`}">
                 <div class="stars--inner">
@@ -146,5 +145,10 @@ video {
   &--inner {
     position: absolute;
   }
+}
+
+.line {
+    position: relative;
+    transform: translateY(10px);
 }
 </style>
