@@ -12,7 +12,7 @@
                     transform: translate(-50%, -50%);">
             <div style="width: 170%;">
                 <video width="320" height="240" autoplay :muted="muted" :hidden="messageHidden" ref="MusicPlay1">
-                    <source src="../../assets/mp4/星星_1.mp4" type="video/mp4">
+                    <source src="../../assets/mp4/星茶会.mp4" type="video/mp4">
                 </video>
                 <my-button style="margin-top: 34%;margin-left: 70%;"
                            :hidden="buttonHidden"
@@ -55,7 +55,6 @@ export default {
             store.state.data = null;
             let a = store.state.data
             this.$router.push('/login')
-            console.log(a + "是")
         }
     }
 }
@@ -83,8 +82,5 @@ export default {
     border-radius: 0;
     font-size: 15px;
     font-weight: 500;
-}
-video {
-    mix-blend-mode: screen;
 }
 </style>
