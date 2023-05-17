@@ -36,7 +36,11 @@ export default {
             }
         },
         jump(){
-            this.pageIndex = parseInt(this.pageIndex)
+            if (isNaN(parseInt(this.pageIndex))){
+                this.pageIndex = 1
+            }else {
+                this.pageIndex = parseInt(this.pageIndex)
+            }
             this.arr = [1,2,3,4,5,6,7]
                 if (this.pageIndex <= 7 && this.pageIndex !== ''){
                     this.$emit("onPageChange",this.pageIndex)
