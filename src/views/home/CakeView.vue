@@ -32,6 +32,7 @@ export default {
     components: { AddText },
     data() {
         return {
+            a_speed: 0,
             RANGE: 30, // 星星摇晃幅度
             mus: require("../../assets/audios/泠鸢yousa - 勾指起誓.mp3"),
             hidden: false,
@@ -63,7 +64,12 @@ export default {
         move(item) {
             let { x, speed, angle, shaking } = item;
             if (this.hidden) {
-                angle += speed * 0.01;
+                if (this.a_speed < 1) {
+                    angle += speed * 0.01 * this.a_speed;
+                    this.a_speed += 0.0002;
+                } else {
+                    angle += speed * 0.01;
+                }
             }
             if (angle > Math.PI * 2) {
                 angle -= Math.PI * 2;
