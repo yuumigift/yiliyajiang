@@ -8,10 +8,10 @@
             <img src="../../assets/images/生日蛋糕.png" alt="" />
         </div>
         <div class="star_container" style="top: -90px">
-            <div class="line" v-for="(item, index) in stars" style="" :key="index" :style="{ left: `${item.x}px`, top: `${item.y}px` }">
+            <div class="line" v-for="(item, index) in stars" style="" :key="index" :style="{ left: `${item.x}px`, top: `${item.y - remain_height}px` }">
                 <div class="line--inner"></div>
             </div>
-            <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px`, top: `${item.y}px` }">
+            <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px`, top: `${item.y - remain_height}px` }">
                 <div class="stars--inner">
                     <video autoplay muted :hidden="hidden">
                         <source src="../../assets/mp4/星星（生成）.mp4" type="video/mp4" />
@@ -33,6 +33,7 @@ export default {
     data() {
         return {
             a_speed: 0.4,
+            remain_height: 200,
             RANGE: 30, // 星星摇晃幅度
             mus: require("../../assets/audios/泠鸢yousa - 勾指起誓.mp3"),
             hidden: false,
@@ -62,7 +63,10 @@ export default {
             this.$refs.MusicPlay.play();
         },
         move(item) {
-            let { x, speed, angle, shaking } = item;
+            let { x, y, speed, angle, shaking } = item;
+            if (this.remain_height > 0) {
+                this.remain_height -= 0.01;
+            }
             if (this.hidden) {
                 if (this.a_speed < 1) {
                     angle += speed * 0.01 * this.a_speed * this.a_speed;
@@ -75,7 +79,7 @@ export default {
                 angle -= Math.PI * 2;
             }
             x = Math.cos(angle) * this.RANGE;
-            return { x, speed, angle, shaking };
+            return { x, y, speed, angle, shaking };
         },
         enterFrame() {
             requestAnimationFrame(this.enterFrame);
