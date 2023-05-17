@@ -10,8 +10,8 @@
         <div class="star_container" style="top: -90px">
             <div class="line" v-for="(item, index) in stars" style="" :key="index" :style="{ left: `${item.x}px`, top: `${item.y}px` }">
                 <div class="line--inner"></div>
-                <div class="line--light is_light_1" v-for="_ in 4"></div>
-                <div class="line--light is_light_2" v-for="_ in 4"></div>
+                <div class="line--light is_light_1" v-for="_ in 2"></div>
+                <div class="line--light is_light_2" v-for="_ in 8"></div>
             </div>
             <div class="stars" v-for="(item, index) in stars" :key="index" :style="{ left: `${item.x}px`, top: `${item.y}px` }">
                 <div class="stars--inner">
@@ -171,10 +171,10 @@ video {
         transform: translateX(2px);
 
         &.is_light_1 {
-            box-shadow: 0px 0px 10px #fff;
+            box-shadow: 0px 0px 12px #fff;
         }
         &.is_light_2 {
-            box-shadow: 0px 0px 20px #fff;
+            box-shadow: 0px 0px 30px #fff;
         }
     }
 }
