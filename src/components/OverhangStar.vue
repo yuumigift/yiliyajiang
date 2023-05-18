@@ -77,7 +77,6 @@ const enterFrame = () => {
             render_x.value = Math.cos(render_angle.value) * props.shake_range + props.x;
         }
     }
-    console.log(render_x.value, render_y.value);
 };
 enterFrame();
 </script>
