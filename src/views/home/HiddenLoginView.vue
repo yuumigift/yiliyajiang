@@ -18,7 +18,7 @@
         <div style="margin-left: 41%;font-size: 20px">
             <my-button
                     class="ass"
-                    style="cursor: pointer;width: 26%;"
+                    style="cursor: pointer;width: 28%;"
                     @click="checkPassword"
                     message="Let's to Login"></my-button>
         </div>

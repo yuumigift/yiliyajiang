@@ -12,7 +12,8 @@ import antdcss from 'antd/dist/reset.css'
 router.beforeEach((to, from, next) => {
     document.title = `${to.meta.title}`;
     const role = localStorage.getItem("role");
-    if (role === '' && to.path !== '/login') {
+    console.log(role)
+    if (role === '-100' && to.path !== '/login') {
         next('/login');
     } else {
         if(role && to.path === '/login'){
@@ -24,9 +25,6 @@ router.beforeEach((to, from, next) => {
             if (role !== '0'){
                 next('/login')
             }
-            else {
-
-            }
         }
         next();
 
@@ -37,3 +35,4 @@ createApp(App).use(router,store,Antd).mount('#app')
 // app.config.globalProperties.initAudio = initAudio    // main.ts/js 文件中
 
 
+app.config.globalProperties.$http=axios

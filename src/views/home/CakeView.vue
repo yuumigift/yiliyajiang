@@ -8,12 +8,12 @@
             <img src="../../assets/images/生日蛋糕.png" alt="" />
         </div>
         <div class="star_container">
-            <OverhangStar :angle="Math.PI" :x="0" :y="50" :speed="13" :freezing="0"></OverhangStar>
-            <OverhangStar :angle="Math.PI" :x="200" :y="100" :speed="16" :freezing="20"></OverhangStar>
-            <OverhangStar :angle="Math.PI" :x="400" :y="0" :speed="11" :freezing="40"></OverhangStar>
+            <OverhangStar :angle="Math.PI" :x="0" :y="50" :speed="13" :freezing="80"></OverhangStar>
+            <OverhangStar :angle="Math.PI" :x="200" :y="100" :speed="16" :freezing="40"></OverhangStar>
+            <OverhangStar :angle="Math.PI" :x="400" :y="0" :speed="11" :freezing="0"></OverhangStar>
             <OverhangStar :angle="0" :x="600" :y="60" :speed="14" :freezing="60"></OverhangStar>
-            <OverhangStar :angle="0" :x="800" :y="20" :speed="12" :freezing="80"></OverhangStar>
-            <OverhangStar :angle="0" :x="1000" :y="120" :speed="18" :freezing="100"></OverhangStar>
+            <OverhangStar :angle="0" :x="800" :y="20" :speed="12" :freezing="100"></OverhangStar>
+            <OverhangStar :angle="0" :x="1000" :y="120" :speed="18" :freezing="20"></OverhangStar>
         </div>
         <div class="mask"></div>
     </div>

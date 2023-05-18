@@ -43,7 +43,7 @@ export default {
 	methods:{
       loginOut(){
           store.state.data = '';
-          localStorage.setItem("role",'')
+          localStorage.setItem("role","-100")
           this.$router.push('/login')
       },
 		changeStyle(){

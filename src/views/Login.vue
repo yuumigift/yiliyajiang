@@ -62,6 +62,9 @@ export default {
 				visitAble:true
 		}
 	},
+	mounted() {
+		localStorage.setItem("role","-100")
+	},
 	methods:{
 		event(data){
 			this.visitAble = data
@@ -90,7 +93,6 @@ export default {
 						this.$router.replace('/hidden/Login')
 						store.state.message.m1 = resp.data.m1;
 						localStorage.setItem("poem",resp.data.poem)
-						console.log(localStorage.getItem("poem"))
 					}else {
 						this.$router.replace('/home')
 					}
