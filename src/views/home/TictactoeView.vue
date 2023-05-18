@@ -78,7 +78,7 @@ export default {
 <style scoped lang="scss">
 
 .mainn{
-	max-width: 1250px;
+	max-width: 1200px;
 	max-height: 860px;
 	height: 90vh;
 	display: flex;

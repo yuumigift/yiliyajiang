@@ -64,7 +64,7 @@ video {
 /*主页面*/
 .main {
   background-color: rgba(16 18 27 / 30%);
-  max-width: 1250px;
+  max-width: 1200px;
   max-height: 860px;
   height: 90vh;
   display: flex;

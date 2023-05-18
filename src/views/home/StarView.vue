@@ -71,7 +71,7 @@ export default {
 
 .maindd{
     margin-top: 45%;
-    max-width: 1250px;
+    max-width: 1200px;
     max-height: 860px;
     height: 90vh;
     display: flex;
