@@ -9,6 +9,7 @@
 <script setup>
 import { ref, watchEffect } from "vue";
 
+// props
 const props = defineProps({
     width: {
         default: 200,
@@ -28,15 +29,14 @@ const props = defineProps({
     },
 });
 
+// emit
 const emit = defineEmits(["update:modelValue"]);
 
+// states
 const is_focus = ref(false);
 const value = ref(props.modelValue);
 
-// const handleUpdateValue = (value) => {
-//     console.log(value);
-//     emit("update:modelValue", value.data);
-// };
+// methods
 const handleFocusIn = () => {
     is_focus.value = true;
 };
@@ -48,6 +48,8 @@ const getInputStyle = () => {
         width: `${is_focus.value ? +props.width + +props.grow_width : +props.width}px`,
     };
 };
+
+// watchers
 watchEffect(() => {
     emit("update:modelValue", value.value);
 });
