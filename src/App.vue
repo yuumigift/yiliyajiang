@@ -113,4 +113,10 @@ video {
     max-height: none;
   }
 }
+.wrapper {
+  position: relative;
+}
+body p {
+  margin: 0;
+}
 </style>
