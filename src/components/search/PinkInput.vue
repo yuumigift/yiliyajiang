@@ -67,11 +67,12 @@ watchEffect(() => {
     background: #ffbdd333;
     color: #fff;
     border-radius: 8px;
-    padding: 8px 12px;
+    padding: 0 12px;
     font-size: 16px;
     transition: 0.3s;
 
     & > input {
+        height: 40px;
         width: 100%;
         background: #0000;
         border: none;
