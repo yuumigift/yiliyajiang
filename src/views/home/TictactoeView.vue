@@ -98,6 +98,8 @@ export default {
         right: 0;
         bottom: 0;
         z-index: 99;
+        border-radius: 8px;
+        overflow: hidden;
     }
 }
 </style>
