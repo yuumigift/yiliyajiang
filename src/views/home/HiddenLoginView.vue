@@ -14,7 +14,7 @@
         </div>
         <div style="margin-left: 40%">
             <!-- <my-search width="50%" type="password" placeholder="请输入通行口令" v-model="password"></my-search> -->
-            <PinkInput type="password" placeholder="请输入通行口令"  v-model="password"></PinkInput>
+            <PinkInput type="password" placeholder="请输入通行口令" v-model="password"></PinkInput>
         </div>
         <div style="margin-left: 41%; font-size: 20px">
             <my-button class="ass" style="cursor: pointer; width: 28%" @click="checkPassword" message="Let's to Login"></my-button>
@@ -200,4 +200,3 @@ export default {
     }
 }
 </style>
->
