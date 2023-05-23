@@ -10,7 +10,7 @@
                     width: 20%;
                     height: 0%;
                     transform: translate(-50%, -50%);">
-            <div style="width: 170%;">
+            <div style="width: 170%;margin-top: 30px;">
                 <video width="320" height="240" autoplay :muted="muted" :hidden="messageHidden" ref="MusicPlay1">
                     <source src="../../assets/mp4/星茶会.mp4" type="video/mp4">
                 </video>
