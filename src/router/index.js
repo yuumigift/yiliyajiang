@@ -12,6 +12,7 @@ import MessageBoardView from "@/views/publicHome/MessageBoardView.vue";
 import ReportView from "@/views/300report/ReportView.vue";
 import FireworkView from "@/views/firework/FireworkView.vue";
 import CakeView from "@/views/home/CakeView.vue";
+import CakeVedioView from "@/views/home/CakeVedioView.vue";
 
 
 const routes = [
@@ -129,6 +130,14 @@ const routes = [
         component: CakeView,
         meta: {
           title: '生日蛋糕'
+        }
+      },
+      {
+        path: '/hidden/cakeVedio',
+        name: '生日蛋糕视频页',
+        component: CakeVedioView,
+        meta: {
+          title: '祝你生日快乐'
         }
       }
     ]
