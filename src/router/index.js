@@ -13,6 +13,7 @@ import ReportView from "@/views/300report/ReportView.vue";
 import FireworkView from "@/views/firework/FireworkView.vue";
 import CakeView from "@/views/home/CakeView.vue";
 import CakeVedioView from "@/views/home/CakeVedioView.vue";
+import ConfessionView from "@/views/home/ConfessionView.vue";
 
 
 const routes = [
@@ -139,6 +140,11 @@ const routes = [
         meta: {
           title: '祝你生日快乐'
         }
+      },
+      {
+        path: '/hidden/confessionView',
+        name: '无名',
+        component: ConfessionView
       }
     ]
   },

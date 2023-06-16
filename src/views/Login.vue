@@ -93,6 +93,7 @@ export default {
 						this.$router.replace('/hidden/Login')
 						store.state.message.m1 = resp.data.m1;
 						localStorage.setItem("poem",resp.data.poem)
+						localStorage.setItem("poem1",resp.data.poem1)
 					}else {
 						this.$router.replace('/home')
 					}
