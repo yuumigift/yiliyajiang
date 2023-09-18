@@ -11,7 +11,6 @@ import antdcss from 'antd/dist/reset.css'
 router.beforeEach((to, from, next) => {
     document.title = `${to.meta.title}`;
     const role = localStorage.getItem("role");
-    console.log(role)
     if (role === '-100' && to.path !== '/login') {
         next('/login');
     } else {

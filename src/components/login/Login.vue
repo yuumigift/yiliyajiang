@@ -1,7 +1,7 @@
 <template>
   <div>
-    <form @submit.prevent="onsubmit" class="form">
-      <div class="form-title"><span>welcome come to you</span></div>
+    <form @submit.prevent class="form" novalidate>
+      <div class="form-title"><span>welcome come to your</span></div>
       <div class="title-2"><span>birthday party</span></div>
 
       <section class="bg-stars">
@@ -10,11 +10,13 @@
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
+        <span class="star"></span>
+
       </section>
       <div style="position:absolute;left: 40vh;top: 20vh;">
         <beautiful-input width="400px" placeholder="请输入用户名" v-model="username"></beautiful-input>
         <br><br>
-        <beautiful-input width="400px" placeholder="请输入密码" v-model="password"></beautiful-input>
+        <beautiful-input type="password" width="400px" placeholder="请输入密码" v-model="password"></beautiful-input>
         <br><br>
         <double-button @click="onsubmit" style="margin-left: -15px;" width="390px"></double-button>
       </div>
@@ -26,11 +28,40 @@
 import BeautifulInput from "@/components/search/BeautifulInput.vue";
 import DoubleButton from "@/components/button/DoubleButton.vue";
 import {ref} from "vue";
+import axios from "axios";
+import store from "@/store";
+
+localStorage.setItem("role","-100")
 
 const username = ref()
 const password = ref()
-
-const onsubmit = (e) => {
+const role = ref("")
+const onsubmit = () => {
+  let submitData = {
+    username : username.value,
+    password : password.value
+  }
+  axios.post("/api/login",submitData).then(resp =>{
+    const data = resp.data
+    role.value = data.role
+    if (data.code === 200){
+      if (resp.data.role === 0){
+        this.$router.replace('/hidden/Login')
+        store.state.message.m1 = resp.data.m1;
+        localStorage.setItem("poem",resp.data.poem)
+        localStorage.setItem("poem1",resp.data.poem1)
+        localStorage.setItem("theLast",resp.data.theLast)
+      }else {
+        this.$router.replace('/home')
+      }
+    }else {
+      alert(data.message)
+    }
+    store.state.username = username.value;
+    store.state.data = role.value;
+    localStorage.setItem("role",role.value)
+    localStorage.setItem("username",username.value)
+  })
 }
 
 </script>
@@ -223,8 +254,14 @@ const onsubmit = (e) => {
 .star:nth-child(5){
   top: 0;
   right: -440px;
-  animation-delay: 1.6s;
+  animation-delay: 0s;
   animation-duration: 1.6s;
 }
-
+.star:nth-child(6){
+  top: 0;
+  right: -470px;
+  margin-left: -200px;
+  animation-delay: 0s;
+  animation-duration: 1.3s;
+}
 </style>

@@ -10,6 +10,9 @@
         <span style="--i: 23" class="star"></span>
         <span style="--i: 70" class="star"></span>
         <span style="--i: 6" class="star"></span>
+        <span style="--i: 12;margin-left: 20px;" class="star"></span>
+        <span style="--i: 15;margin-left: 30px;" class="star"></span>
+        <span style="--i: 41;margin-left: 40px;" class="star"></span>
       </div>
     </div>
   </div>
