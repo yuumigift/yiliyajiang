@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="box">
-      <button class="button"><span style="text-align: center;margin-left: 100px;">LOGIN</span></button>
+      <button class="button">LOGIN</button>
       <div class="space">
         <span style="--i: 31" class="star"></span>
         <span style="--i: 12" class="star"></span>
@@ -10,29 +10,28 @@
         <span style="--i: 23" class="star"></span>
         <span style="--i: 70" class="star"></span>
         <span style="--i: 6" class="star"></span>
-        <span style="--i: 12;margin-left: 20px;" class="star"></span>
-        <span style="--i: 15;margin-left: 30px;" class="star"></span>
-        <span style="--i: 41;margin-left: 40px;" class="star"></span>
+        <span style="--i: 12; margin-left: 20px" class="star"></span>
+        <span style="--i: 15; margin-left: 30px" class="star"></span>
+        <span style="--i: 41; margin-left: 40px" class="star"></span>
       </div>
     </div>
   </div>
 </template>
-<script setup>
-
-</script>
+<script setup></script>
 <style scoped lang="scss">
 .box {
   --clr-shadow__border: #d9a1ff;
-  --clr-text: #F6F4EB;
+  --clr-text: #f6f4eb;
   --clr-space: #120e1e;
   --clr-space-gr: #271950;
-  --clr-star: #E9F8F9;
+  --clr-star: #e9f8f9;
   --size: 3rem;
   position: relative;
 }
 
 .button {
-
+  display: block;
+  width: 100%;
   font-weight: 600;
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
@@ -42,8 +41,7 @@
   border: none;
   cursor: pointer;
   color: var(--clr-text);
-  text-shadow: 2px 0px var(--clr-shadow__border), 0px 2px var(--clr-shadow__border),
-  -2px 0px var(--clr-shadow__border), 0px -2px var(--clr-shadow__border);
+  text-shadow: 2px 0px var(--clr-shadow__border), 0px 2px var(--clr-shadow__border), -2px 0px var(--clr-shadow__border), 0px -2px var(--clr-shadow__border);
 }
 
 .space {
@@ -57,7 +55,7 @@
   overflow: hidden;
   position: absolute;
   display: flex;
-  background: linear-gradient( 160deg, var(--clr-space), var(--clr-space-gr));
+  background: linear-gradient(160deg, var(--clr-space), var(--clr-space-gr));
 }
 
 .box:hover .space {
@@ -84,12 +82,4 @@
     transform: rotate(-30deg) translateY(calc(52% * var(--i)));
   }
 }
-
-
-
-
-
-
-
-
 </style>
