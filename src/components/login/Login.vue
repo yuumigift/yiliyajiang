@@ -65,11 +65,14 @@ const onsubmit = () => {
 }
 
 setTimeout(() => {
-  window.is_start_sakura = true; // 暂停樱花
+  window.is_start_sakura = true; // 播放樱花
 }, 2000);
+
 setTimeout(() => {
-  window.is_start_sakura = false; // 播放樱花
+  window.is_start_sakura = false; // 暂停樱花
 }, 4000);
+
+
 </script>
 <style scoped lang="scss">
 .form {
