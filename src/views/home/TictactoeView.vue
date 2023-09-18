@@ -24,7 +24,6 @@
 
 <script>
 import MyButton from "@/components/button/MyButton.vue";
-import { startSakura } from "@/assets/js/sakura";
 import MyLabel from "@/components/lable/MyLabel.vue";
 import AddText from "@/components/AddText.vue";
 import axios from "axios";
@@ -49,7 +48,7 @@ export default {
 	init(){
 	},
 	mounted() {
-		startSakura()
+		window.is_start_sakura = true;
 		const arr = localStorage.getItem("poem")?.split(',')
 		this.poem = arr
 		this.$refs.MusicPlay.volume = 0.15

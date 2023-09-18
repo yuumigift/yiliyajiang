@@ -8,6 +8,7 @@ import axios from "axios";
 import store from './store';
 import Antd from 'ant-design-vue';
 import antdcss from 'antd/dist/reset.css'
+import "@/assets/js/sakura"
 router.beforeEach((to, from, next) => {
     document.title = `${to.meta.title}`;
     const role = localStorage.getItem("role");

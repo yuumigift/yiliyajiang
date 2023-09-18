@@ -18,7 +18,7 @@
         <br><br>
         <beautiful-input type="password" width="400px" placeholder="请输入密码" v-model="password"></beautiful-input>
         <br><br>
-        <double-button @click="onsubmit" style="margin-left: -15px;" width="390px"></double-button>
+        <double-button @click="onsubmit" style="margin-left: -15px;" width="290px"></double-button>
       </div>
     </form>
   </div>
@@ -64,6 +64,12 @@ const onsubmit = () => {
   })
 }
 
+setTimeout(() => {
+  window.is_start_sakura = true; // 暂停樱花
+}, 2000);
+setTimeout(() => {
+  window.is_start_sakura = false; // 播放樱花
+}, 4000);
 </script>
 <style scoped lang="scss">
 .form {
